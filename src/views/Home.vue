@@ -1,6 +1,8 @@
 <template>
   <div>
+    <MainPageImageSlider/>
     <h1>Welcome to {{ title }}!</h1>
+
     <input type="text" v-model="input1" />
     <button type="button" @click="getData">Get</button>
     <button type="button" @click="setData">Set</button>
@@ -26,8 +28,10 @@ v-if는 렌더링 할지말지
 
 <script>
 import * as member from '@/api/member';
+import MainPageImageSlider from "@/components/layout/MainPageImageSlider";
 
 export default {
+  components: {MainPageImageSlider},
   data(){
     return {
       title:"pwmw의 품격",

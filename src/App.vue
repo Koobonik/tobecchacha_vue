@@ -4,6 +4,8 @@
     <div id="content" class="content">
       <router-view></router-view>
     </div>
+
+<!--    <Footer/>-->
 <!--    <img alt="Vue logo" src="./assets/logo.png">-->
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </div>
@@ -16,7 +18,6 @@ import Header from './components/layout/Header.vue'
 export default {
   name: 'App',
   components: {
-
     Header,
   }
 }
