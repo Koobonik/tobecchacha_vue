@@ -14,11 +14,24 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/layout/Header.vue'
+import * as http from "@/api/member";
 
 export default {
   name: 'App',
   components: {
     Header,
+  },
+  data() {
+    return {
+      token: ""
+    };
+  },
+  methods: {
+
+  },
+  beforeCreate() {
+    // eslint-disable-next-line no-unused-vars
+    http.getToken();
   }
 }
 </script>

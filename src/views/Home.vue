@@ -69,8 +69,7 @@ export default {
     },
     changeRegion(){
       alert(this.region)
-    }
-
+    },
   },
   watch:{
     input1(){
