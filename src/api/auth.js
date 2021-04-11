@@ -1,22 +1,50 @@
 import http from './http';
-import store from '@/store';
+// import store from '@/store/auth';
+import * as member from "@/api/member";
 export async function login(userEmail, userPassword){
-    const response = await http.post('/login', {
+   await http.post('/api/v1/login', {
         userEmail,
         userPassword
-    });
+    }).then(response => {
+       if(response.status === 200){
+           console.log("토큰 저장");
+           member.setToken(response.data.jwt, response.data.refreshJwt);
 
-    if(response.status === 200){
-        store.commit('auth/setToken', response.data.token);
-    }
-    return response;
+       }
+       console.log(response.data.jwt);
+       console.log(response.data.refreshJwt);
+       return response;
+   }).catch(error => {
+       alert(error.response.data.message);
+   })
+
+
 }
 
-export async function signup(userEmail, userPassword, userNickname, emailToken){
-    return http.post('/signup', {
+export async function signup(userEmail, password, nickName, emailCode){
+    http.post('/api/v1/signUp', {
         userEmail,
-        userPassword,
-        userNickname,
-        emailToken
+        password,
+        nickName,
+        emailCode
+    }).then(response => {
+        console.info(response);
+        // 바로 로그인 로직 실행
+        login(userEmail, password)
+    }).catch(error => {
+        alert(error.response.data.message);
+    })
+}
+
+export async function sendEmailForAuthEmail(recipient){
+    console.log(recipient);
+    await http.post('/api/v1/sendEmailForAuthEmail', {
+        recipient,
+    }).then(response => {
+        alert(response.data.message);
+       return response;
+    }).catch(error => {
+       alert(error.response.data.message);
     });
 }
+

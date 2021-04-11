@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="light" variant="danger">
-      <b-navbar-brand href="#">우리들의 세상</b-navbar-brand>
+    <b-navbar toggleable="lg" type="light" v-bind:variant="navColor">
+      <b-navbar-brand href="/">차차 편집소</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -9,27 +9,27 @@
       <b-collapse id="nav-collapse" is-nav>
 
 
-        <b-dropdown id="dropdown-offset" offset="25" text="소개" class="m-2" variant="light">
+        <b-dropdown id="dropdown-offset" offset="25" text="소개" class="m-2" v-bind:variant="navColor">
           <b-dropdown-item href="#">단체소개</b-dropdown-item>
           <b-dropdown-item href="#">오시는 길</b-dropdown-item>
           <b-dropdown-item href="#">조직도</b-dropdown-item>
         </b-dropdown>
 
-        <b-dropdown id="dropdown-offset" offset="25" text="출판" class="m-2" variant="light">
+        <b-dropdown id="dropdown-offset" offset="25" text="출판" class="m-2" v-bind:variant="navColor">
           <b-dropdown-item href="#">스토어</b-dropdown-item>
           <b-dropdown-item href="#">책소개</b-dropdown-item>
           <b-dropdown-item href="#">편집장</b-dropdown-item>
         </b-dropdown>
-        <b-dropdown id="dropdown-offset" offset="25" text="공연·전시" class="m-2" variant="light">
+        <b-dropdown id="dropdown-offset" offset="25" text="공연·전시" class="m-2" v-bind:variant="navColor">
           <b-dropdown-item href="#">모집공지</b-dropdown-item>
           <b-dropdown-item href="#">갤러리</b-dropdown-item>
         </b-dropdown>
-        <b-dropdown id="dropdown-offset" offset="25" text="교육" class="m-2" variant="light">
+        <b-dropdown id="dropdown-offset" offset="25" text="교육" class="m-2" v-bind:variant="navColor">
           <b-dropdown-item href="#">모집공지</b-dropdown-item>
           <b-dropdown-item href="#">갤러리</b-dropdown-item>
         </b-dropdown>
 
-        <b-dropdown id="dropdown-offset" offset="25" text="작가군" class="m-2" variant="light">
+        <b-dropdown id="dropdown-offset" offset="25" text="작가군" class="m-2" v-bind:variant="navColor">
           <b-dropdown-item href="#">Action</b-dropdown-item>
           <b-dropdown-item href="#">Another action</b-dropdown-item>
           <b-dropdown-item href="#">Something else here</b-dropdown-item>
@@ -70,6 +70,12 @@
 <script>
 export default {
   name: "Header.vue",
+  data(){
+    return{
+      // primary, success, info, warning, danger, dark, or light.
+      navColor: "primary",
+    }
+  },
  // name: "header"
 };
 </script>
