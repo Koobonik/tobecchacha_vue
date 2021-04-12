@@ -5,12 +5,11 @@ export async function getMembers(){
 
 
 export async function getMyProfile(){
-    http.get('/api/v1/getProfile').then(response => {
+    return http.get('/api/v1/getProfile').then(response => {
         console.log(response.data.userNickname);
         return response.data.userNickname;
     }).catch(error => {
         console.log(error);
-        return null;
-
+        return 'asd';
     })
 }

@@ -38,7 +38,7 @@
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <em>{{ nickName }}</em>
+              <em>{{ userNickname }}</em>
             </template>
             <b-dropdown-item href="#">Profile</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -86,10 +86,29 @@ export default {
 
 
   },
-  async beforeCreate() {
+  beforeCreate() {
     console.log("헤더 만들어짐");
-    this.userNickname = await member.getMyProfile();
+    member.getMyProfile().then(response => {
+      console.log(response);
+      this.userNickname = response;
+      this.isLogin = true;
+    })
   },
+  created() {
+    // this.userNickname = member.getMyProfile();
+  },
+  beforeMount() {
+  },
+  mounted() {
+  },
+  beforeUpdate() {
+  },
+  updated() {
+  },
+  beforeDestroy() {
+  },
+  destroyed() {
+  }
 };
 
 
