@@ -14,7 +14,6 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/layout/Header.vue'
-import * as http from "@/api/member";
 
 export default {
   name: 'App',
@@ -32,7 +31,8 @@ export default {
   },
   beforeCreate() {
     // eslint-disable-next-line no-unused-vars
-    http.getToken();
+    // http.getToken();
+    // http.getMyProfile();
   }
 }
 </script>

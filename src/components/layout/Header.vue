@@ -38,7 +38,7 @@
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <em>User</em>
+              <em>{{ nickName }}</em>
             </template>
             <b-dropdown-item href="#">Profile</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -68,16 +68,31 @@
 }
 </style>
 <script>
+import * as member from "@/api/member";
+
 export default {
   name: "Header.vue",
   data(){
     return{
       // primary, success, info, warning, danger, dark, or light.
       navColor: "primary",
+      isLogin: false,
+      userNickname: "계정 정보",
     }
   },
+  methods: {
+
  // name: "header"
+
+
+  },
+  async beforeCreate() {
+    console.log("헤더 만들어짐");
+    this.userNickname = await member.getMyProfile();
+  },
 };
+
+
 </script>
 
 <!--<style scoped>-->
