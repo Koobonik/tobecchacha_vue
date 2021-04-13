@@ -38,10 +38,17 @@
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <em>{{ userNickname }}</em>
+              <em>{{ isLogin ? userNickname : "로그인하기"}}</em>
             </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <div v-if="isLogin">
+              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            </div>
+            <div v-else>
+              <b-dropdown-item href="/login">로그인</b-dropdown-item>
+              <b-dropdown-item href="/signup">회원가입</b-dropdown-item>
+            </div>
+
           </b-nav-item-dropdown>
           <!--          <b-nav-form>-->
           <!--            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>-->
@@ -69,6 +76,7 @@
 </style>
 <script>
 import * as member from "@/api/member";
+import * as auth from "@/api/auth";
 
 export default {
   name: "Header.vue",
@@ -88,11 +96,34 @@ export default {
   },
   beforeCreate() {
     console.log("헤더 만들어짐");
-    member.getMyProfile().then(response => {
-      console.log(response);
-      this.userNickname = response;
-      this.isLogin = true;
-    })
+    if(auth.getToken() !== null){
+      console.log("토큰 있음");
+      member.getMyProfile().then(response => {
+        console.log(response);
+        if(response !== null){
+          console.log("is not null");
+          this.userNickname = response;
+          this.isLogin = true;
+        }
+      });
+    }
+    else {
+      console.log("계정 없음");
+      this.isLogin = false;
+    }
+    // member.getMyProfile().then(response => {
+    //   console.log(response);
+    //   if(response !== null){
+    //     console.log("is not null");
+    //     this.userNickname = response;
+    //     this.isLogin = true;
+    //   }
+    //   else {
+    //     this.userNickname = '로그인하기';
+    //     this.isLogin = false;
+    //   }
+    //
+    // })
   },
   created() {
     // this.userNickname = member.getMyProfile();

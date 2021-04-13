@@ -10,6 +10,6 @@ export async function getMyProfile(){
         return response.data.userNickname;
     }).catch(error => {
         console.log(error);
-        return 'asd';
+        return null;
     })
 }

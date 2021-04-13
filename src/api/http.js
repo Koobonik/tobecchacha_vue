@@ -28,8 +28,6 @@ instance.interceptors.response.use(
             console.log("토큰 만료");
             //1. 리뉴얼 토큰 가져오자!
             auth.renewalToken(auth.getRefreshToken()).then(response => {
-                console.log(response.data.jwt);
-                console.log(response.data.refreshJwt);
                 auth.removeTokens();
                 auth.setToken(response.data.jwt, response.data.refreshJwt);
             }).catch(error => {

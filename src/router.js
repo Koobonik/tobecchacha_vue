@@ -4,6 +4,7 @@ import Home from "./views/Home";
 import About from "./views/About";
 import Member from "./views/Member"
 import Signup from "@/views/signup/Signup";
+import Login from "@/views/login/Login";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: "history",
@@ -23,6 +24,10 @@ const router = new VueRouter({
         {
             path: "/signup",
             component: Signup
+        },
+        {
+            path: "/login",
+            component: Login,
         }
     ]
 });
