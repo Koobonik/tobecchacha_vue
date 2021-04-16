@@ -49,6 +49,8 @@
 
 <script>
 import * as auth from '@/api/auth'
+import router from "@/router";
+import * as member from "@/api/member";
 export default {
 name: "Login",
   data() {
@@ -96,6 +98,15 @@ name: "Login",
       else {
         this.onSubmit();
       }
+    },
+    beforeCreate(){
+      member.getMyProfile(auth.getToken()).then(response => {
+        console.log(response);
+        router.go(-1);
+      }).catch(error => {
+        console.log(error);
+      })
+
     }
 
   }

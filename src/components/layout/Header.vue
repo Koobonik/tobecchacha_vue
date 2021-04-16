@@ -41,8 +41,8 @@
               <em>{{ isLogin ? userNickname : "로그인하기"}}</em>
             </template>
             <div v-if="isLogin">
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+              <b-dropdown-item href="#">내 정보</b-dropdown-item>
+              <b-dropdown-item href="/logout">로그아웃</b-dropdown-item>
             </div>
             <div v-else>
               <b-dropdown-item href="/login">로그인</b-dropdown-item>
