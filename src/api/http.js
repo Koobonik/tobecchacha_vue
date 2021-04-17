@@ -5,6 +5,11 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(function (config){
+    console.log(config.url);
+    // console.log(config.baseURL+'/api/v1/findPassword');
+    // if(config.url === '/api/v1/findPassword'){
+    //     alert("이메일을 전송하였습니다.");
+    // }
     if(auth.getToken() !== null){
         config['headers'] = {
             Authorization : `${auth.getToken()}`
@@ -35,6 +40,9 @@ instance.interceptors.response.use(
                 return null;
             });
             //2. 그리고 다시 세팅해주자
+        }
+        else if(error.response.status === 409){
+            alert(error.response.data.message);
         }
         /*
             http status가 200이 아닌 경우

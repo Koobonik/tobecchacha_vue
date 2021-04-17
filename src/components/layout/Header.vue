@@ -42,7 +42,7 @@
             </template>
             <div v-if="isLogin">
               <b-dropdown-item href="#">내 정보</b-dropdown-item>
-              <b-dropdown-item href="/logout">로그아웃</b-dropdown-item>
+              <b-dropdown-item @click="logout">로그아웃</b-dropdown-item>
             </div>
             <div v-else>
               <b-dropdown-item href="/login">로그인</b-dropdown-item>
@@ -89,7 +89,9 @@ export default {
     }
   },
   methods: {
-
+    async logout(){
+      await auth.logout(auth.getToken(), auth.getRefreshToken());
+    }
  // name: "header"
 
 
@@ -97,10 +99,10 @@ export default {
   beforeCreate() {
 
   },
-  created() {
+  async created() {
     // this.userNickname = member.getMyProfile();
     console.log("헤더 만들어짐");
-    if(auth.getToken() !== null){
+    if(await auth.getToken() !== null){
       console.log("토큰 있음");
       user.getMyProfile().then(response => {
         console.log(response);
@@ -113,7 +115,6 @@ export default {
         console.log(error);
         this.userNickname = "로그인하기";
         this.isLogin = false;
-        auth.log
       });
     }
     else {

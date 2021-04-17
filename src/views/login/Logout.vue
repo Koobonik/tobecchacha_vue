@@ -6,8 +6,8 @@
 
 <script>
 import * as auth from '@/api/auth'
-import * as user from '@/api/user'
-import router from "@/router";
+// import * as user from '@/api/user'
+// import router from "@/router";
 export default {
 name: "Logout",
   data() {
@@ -21,8 +21,6 @@ name: "Logout",
   async beforeCreate() {
     console.log("로그아웃");
     await auth.removeTokens();
-    await user.getMyProfile();
-    router.go(-1);
   },
 }
 

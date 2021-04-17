@@ -3,14 +3,14 @@
     <MainPageImageSlider/>
     <h1>Welcome to {{ title }}!</h1>
 
-    <input type="text" v-model="input1" />
-    <button type="button" @click="getData">Get</button>
-    <button type="button" @click="setData">Set</button>
-<!--    셀렉트 콤보 박스가 제주가 선택된 상태로 나올 것임    -->
-    <select class="form-control" v-model="region" @change="changeRegion">
-<!--      key에는 밸류값을, -->
-      <option :key="i" :value="d.v" v-for="(d,i) in options">{{d.t}}</option>
-    </select>
+<!--    <input type="text" v-model="input1" />-->
+<!--    <button type="button" @click="getData">Get</button>-->
+<!--    <button type="button" @click="setData">Set</button>-->
+<!--&lt;!&ndash;    셀렉트 콤보 박스가 제주가 선택된 상태로 나올 것임    &ndash;&gt;-->
+<!--    <select class="form-control" v-model="region" @change="changeRegion">-->
+<!--&lt;!&ndash;      key에는 밸류값을, &ndash;&gt;-->
+<!--      <option :key="i" :value="d.v" v-for="(d,i) in options">{{d.t}}</option>-->
+<!--    </select>-->
 <!--    v-show 라는 옵션도 있음
 v-show는 렌더링은 하지만 보여주지 않을뿐
 v-if는 렌더링 할지말지
@@ -56,6 +56,9 @@ export default {
   },
   methods:{
     getData() {
+    },
+    setData(){
+
     }
   },
   watch:{

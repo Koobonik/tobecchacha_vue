@@ -12,7 +12,7 @@
             id="userEmail"
             v-model="form.userEmail"
             type="email"
-            placeholder="Enter email"
+            placeholder="이메일을 입력해주세요."
             required
         ></b-form-input>
       </b-form-group>

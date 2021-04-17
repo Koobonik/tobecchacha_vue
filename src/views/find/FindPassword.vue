@@ -18,12 +18,11 @@
       </b-form-group>
 
 
-      <b-form-group id="input-group-2" label="비밀번호" label-for="input-3" align="left">
+      <b-form-group id="input-group-2" label="닉네임" label-for="input-2" align="left">
         <b-form-input
-            type="password"
-            id="input-3"
-            v-model="form.password"
-            v-bind:placeholder="passwordPlaceholder"
+            id="nickName"
+            v-model="form.userNickname"
+            v-bind:placeholder="nickNamePlaceholder"
             required
         ></b-form-input>
       </b-form-group>
@@ -38,8 +37,7 @@
         </b-form-checkbox-group>
       </b-form-group>
 
-      <b-button block @click="validation" variant="primary">로그인</b-button>
-      <b-button block href="findPassword" variant="outline-primary">비밀번호 찾기</b-button>
+      <b-button block @click="validation" variant="primary">초기화 링크 전송</b-button>
 <!--      <b-button type="reset" variant="danger">Reset</b-button>-->
     </b-form>
 <!--    <b-card class="mt-3" header="Form Data Result">-->
@@ -53,27 +51,22 @@ import * as auth from '@/api/auth'
 import router from "@/router";
 import * as user from "@/api/user";
 export default {
-name: "Login",
+name: "FindPassword",
   data() {
     return {
       form: {
         userEmail: '',
-        password: '',
+        userNickname: '',
         autoLogin : false,
       },
-      passwordPlaceholder: "비밀번호는 9자 이상 입력해주세요.",
       show: true,
+      nickNamePlaceholder: "닉네임은 2자 이상 입력해주세요."
     }
   },
   methods: {
-    async onSubmit() {
+    onSubmit() {
       // alert(JSON.stringify(this.form));
-      await auth.login(this.form.userEmail, this.form.password).then(response => {
-        console.log(response);
-        router.push("/");
-        router.go(0);
-
-      })
+      auth.findPassword(this.form.userEmail, this.form.userNickname);
       // this.beforeRouteEnter();
 
     },
@@ -86,10 +79,7 @@ name: "Login",
       event.preventDefault()
       // Reset our form values
       this.form.userEmail = '';
-      this.form.password = '';
-      // this.form.food = null
-      // this.form.checked = []
-      // Trick to reset/clear native browser form validation state
+      this.form.userNickname = '';
       this.show = false
       this.$nextTick(() => {
         this.show = true
@@ -97,13 +87,9 @@ name: "Login",
     },
 
     async validation(){
-      if(this.form.password.length < 9){
-        alert("비밀번호는 9자 이상 입력해주세요.");
-        return null;
-      }
-      else {
+
         this.onSubmit();
-      }
+
     },
     beforeCreate(){
       user.getMyProfile(auth.getToken()).then(response => {

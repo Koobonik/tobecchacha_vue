@@ -11,23 +11,25 @@ export async function login(userEmail, userPassword){
        if(response.status === 200){
            console.log("토큰 저장");
            auth.setToken(response.data.jwt, response.data.refreshJwt);
+           console.log(response.data.jwt);
+           console.log(response.data.refreshJwt);
+           // router.push("/");
+           return response;
        }
-       console.log(response.data.jwt);
-       console.log(response.data.refreshJwt);
-       router.go(-1);
-       return response;
+
    }).catch(error => {
        console.log(error);
    })
 }
 
-export async function logout(){
+export async function logout(jwt, refreshJwt){
     await http.post("/api/v1/logout", {
-        getToken,
-        getRefreshToken
-    }).then(response => {
+        jwt,
+        refreshJwt
+    }).then(async response => {
         console.log("정상적으로 로그아웃!", response);
-        removeTokens();
+        await removeTokens();
+        router.go(0);
     }).catch(error => {
         console.log("로그아웃 하는데 문제 발생", error);
     })
@@ -48,6 +50,37 @@ export async function signup(userEmail, password, nickName, emailCode){
         // alert(error.response.data.message);
     })
 }
+
+
+export async function findPassword(userEmail, userNickname){
+    await http.post('/api/v1/findPassword', {
+        userEmail,
+        userNickname
+    }).then(response => {
+        if(response.status === 200){
+            console.log(response);
+            alert("이메일을 확인해주세요.");
+        }
+        router.go(-1);
+        return response;
+    });
+}
+
+export async function resetPasswordUsingToken(token, newPassword){
+    await http.post('/api/v1/resetPasswordUsingToken', {
+        token,
+        newPassword
+    }).then(response => {
+        if(response.status === 200){
+            alert("비밀번호가 재설정 되었습니다.");
+            router.push('/login');
+        }
+        return response;
+    }).catch(error => {
+        console.log(error);
+    })
+}
+
 // eslint-disable-next-line no-unused-vars
 export function setToken(token, refreshToken) {
     localStorage.setItem('token', token);
@@ -93,8 +126,6 @@ export async function sendEmailForAuthEmail(recipient){
     }).then(response => {
         alert(response.data.message);
        return response;
-    }).catch(error => {
-       alert(error.response.data.message);
     });
 }
 
