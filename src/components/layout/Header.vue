@@ -113,6 +113,7 @@ export default {
         console.log(error);
         this.userNickname = "로그인하기";
         this.isLogin = false;
+        auth.log
       });
     }
     else {

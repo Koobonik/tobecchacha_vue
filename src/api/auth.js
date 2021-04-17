@@ -21,6 +21,18 @@ export async function login(userEmail, userPassword){
    })
 }
 
+export async function logout(){
+    await http.post("/api/v1/logout", {
+        getToken,
+        getRefreshToken
+    }).then(response => {
+        console.log("정상적으로 로그아웃!", response);
+        removeTokens();
+    }).catch(error => {
+        console.log("로그아웃 하는데 문제 발생", error);
+    })
+}
+
 export async function signup(userEmail, password, nickName, emailCode){
     http.post('/api/v1/signUp', {
         userEmail,
@@ -49,9 +61,7 @@ export function getToken(){
         return this.token;
     }
     else {
-        console.log("토큰 삭제");
-        localStorage.removeItem('token');
-        localStorage.removeItem('refreshToken');
+        removeTokens();
         return null;
     }
 }
@@ -65,9 +75,7 @@ export function getRefreshToken(){
         return this.refreshToken;
     }
     else {
-        console.log("토큰 삭제");
-        localStorage.removeItem('token');
-        localStorage.removeItem('refreshToken');
+        removeTokens();
     }
 }
 
