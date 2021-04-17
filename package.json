@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --mode product",
+    "serve": "vue-cli-service serve --mode localhost",
     "localhost": "vue-cli-service build --mode localhost",
     "product": "vue-cli-service serve --mode product",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode product",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

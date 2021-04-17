@@ -70,8 +70,6 @@ name: "Login",
       // alert(JSON.stringify(this.form));
       await auth.login(this.form.userEmail, this.form.password).then(response => {
         console.log(response);
-        router.push("/");
-        router.go(0);
 
       })
       // this.beforeRouteEnter();

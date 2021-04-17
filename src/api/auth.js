@@ -13,6 +13,8 @@ export async function login(userEmail, userPassword){
            auth.setToken(response.data.jwt, response.data.refreshJwt);
            console.log(response.data.jwt);
            console.log(response.data.refreshJwt);
+           router.push("/");
+           router.go(0);
            // router.push("/");
            return response;
        }
