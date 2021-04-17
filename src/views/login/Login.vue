@@ -50,7 +50,7 @@
 <script>
 import * as auth from '@/api/auth'
 import router from "@/router";
-import * as member from "@/api/member";
+import * as user from "@/api/user";
 export default {
 name: "Login",
   data() {
@@ -100,7 +100,7 @@ name: "Login",
       }
     },
     beforeCreate(){
-      member.getMyProfile(auth.getToken()).then(response => {
+      user.getMyProfile(auth.getToken()).then(response => {
         console.log(response);
         router.go(-1);
       }).catch(error => {

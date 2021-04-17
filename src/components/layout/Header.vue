@@ -38,7 +38,7 @@
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <em>{{ isLogin ? userNickname : "로그인하기"}}</em>
+              <em>{{userNickname}}</em>
             </template>
             <div v-if="isLogin">
               <b-dropdown-item href="#">내 정보</b-dropdown-item>
@@ -75,7 +75,7 @@
 }
 </style>
 <script>
-import * as member from "@/api/member";
+import * as user from "@/api/user";
 import * as auth from "@/api/auth";
 
 export default {
@@ -85,7 +85,7 @@ export default {
       // primary, success, info, warning, danger, dark, or light.
       navColor: "primary",
       isLogin: false,
-      userNickname: "계정 정보",
+      userNickname: "",
     }
   },
   methods: {
@@ -98,7 +98,7 @@ export default {
     console.log("헤더 만들어짐");
     if(auth.getToken() !== null){
       console.log("토큰 있음");
-      member.getMyProfile().then(response => {
+      user.getMyProfile().then(response => {
         console.log(response);
         if(response !== null){
           console.log("is not null");

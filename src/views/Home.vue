@@ -27,7 +27,7 @@ v-if는 렌더링 할지말지
 </template>
 
 <script>
-import * as member from '@/api/member';
+import * as member from '@/api/user';
 import MainPageImageSlider from "@/components/layout/MainPageImageSlider";
 
 export default {
