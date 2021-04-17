@@ -38,7 +38,7 @@
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-              <em>{{userNickname}}</em>
+              <em>{{ userNickname }}</em>
             </template>
             <div v-if="isLogin">
               <b-dropdown-item href="#">내 정보</b-dropdown-item>
@@ -95,6 +95,10 @@ export default {
 
   },
   beforeCreate() {
+
+  },
+  created() {
+    // this.userNickname = member.getMyProfile();
     console.log("헤더 만들어짐");
     if(auth.getToken() !== null){
       console.log("토큰 있음");
@@ -105,28 +109,17 @@ export default {
           this.userNickname = response;
           this.isLogin = true;
         }
+      }).catch(error => {
+        console.log(error);
+        this.userNickname = "로그인하기";
+        this.isLogin = false;
       });
     }
     else {
       console.log("계정 없음");
       this.isLogin = false;
+      this.userNickname = "로그인하기";
     }
-    // member.getMyProfile().then(response => {
-    //   console.log(response);
-    //   if(response !== null){
-    //     console.log("is not null");
-    //     this.userNickname = response;
-    //     this.isLogin = true;
-    //   }
-    //   else {
-    //     this.userNickname = '로그인하기';
-    //     this.isLogin = false;
-    //   }
-    //
-    // })
-  },
-  created() {
-    // this.userNickname = member.getMyProfile();
   },
   beforeMount() {
   },

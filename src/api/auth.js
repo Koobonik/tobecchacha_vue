@@ -42,10 +42,10 @@ export function setToken(token, refreshToken) {
     localStorage.setItem("refreshToken", refreshToken);
 }
 export function getToken(){
-    console.log("토큰 가져오기123");
+
     if(localStorage.getItem("token") != null){
+        console.log("auth.getToken");
         this.token = localStorage.getItem("token");
-        console.log("토큰 가져오기 : ", this.token);
         return this.token;
     }
     else {

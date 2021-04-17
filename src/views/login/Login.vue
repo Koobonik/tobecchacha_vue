@@ -38,7 +38,9 @@
         </b-form-checkbox-group>
       </b-form-group>
 
-      <b-button @click="validation" variant="primary">로그인</b-button>
+      <b-button block @click="validation" variant="primary">로그인</b-button>
+      <b-button block href="findPassword" variant="outline-primary">아이디 찾기</b-button>
+      <b-button block href="findPassword" variant="outline-primary">비밀번호 찾기</b-button>
 <!--      <b-button type="reset" variant="danger">Reset</b-button>-->
     </b-form>
 <!--    <b-card class="mt-3" header="Form Data Result">-->

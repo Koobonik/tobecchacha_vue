@@ -27,7 +27,6 @@ v-if는 렌더링 할지말지
 </template>
 
 <script>
-import * as member from '@/api/user';
 import MainPageImageSlider from "@/components/layout/MainPageImageSlider";
 
 export default {
@@ -56,20 +55,8 @@ export default {
     };
   },
   methods:{
-    getData(){
-      alert(this.input1);
-      member.getMembers().then(response => {
-        console.log(response.data);
-      }).catch(error => {
-        console.log(error);
-      });
-    },
-    setData(){
-      this.input1 = "12345";
-    },
-    changeRegion(){
-      alert(this.region)
-    },
+    getData() {
+    }
   },
   watch:{
     input1(){

@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import * as auth from '@/api/auth'
-import * as member from '@/api/user'
-import router from "@/router";
+// import * as auth from '@/api/auth'
+// import * as user from '@/api/user'
+// import router from "@/router";
 export default {
 name: "Logout",
   data() {
@@ -16,15 +16,10 @@ name: "Logout",
     }
   },
   methods: {
-    beforeCreate() {
 
-    },
     created(){
-      auth.removeTokens();
-      member.getMyProfile();
-      router.go(-2);
+      console.log("왜");
     }
-
   }
 }
 
