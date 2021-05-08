@@ -8,6 +8,7 @@ import Login from "@/views/login/Login";
 import Logout from "@/views/login/Logout";
 import FindPassword from "@/views/find/FindPassword";
 import ResetPassword from "@/views/find/ResetPassword";
+import BooksPage from "@/views/books/BooksPage";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: "history",
@@ -43,6 +44,10 @@ const router = new VueRouter({
         {
             path: "/resetPassword",
             component: ResetPassword,
+        },
+        {
+            path: "/books",
+            component: BooksPage
         },
     ]
 });

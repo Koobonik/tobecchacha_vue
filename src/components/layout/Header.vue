@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" v-bind:variant="navColor">
-      <b-navbar-brand href="/">차차 편집소</b-navbar-brand>
+      <b-navbar-brand href="/"><img alt="Vue logo" src="../../assets/chalogo.png"></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -9,31 +9,42 @@
       <b-collapse id="nav-collapse" is-nav>
 
 
-        <b-dropdown id="dropdown-offset" offset="25" text="소개" class="m-2" v-bind:variant="navColor">
-          <b-dropdown-item href="#">단체소개</b-dropdown-item>
-          <b-dropdown-item href="#">오시는 길</b-dropdown-item>
-          <b-dropdown-item href="#">조직도</b-dropdown-item>
-        </b-dropdown>
+        <b-button v-bind:variant="navColor" href="/books">Books</b-button>
+        <b-button v-bind:variant="navColor" href="/login">Education</b-button>
+        <b-button v-bind:variant="navColor" href="/login">Gallery</b-button>
+        <b-button v-bind:variant="navColor" href="/login">Artists</b-button>
+        <b-button v-bind:variant="navColor" href="/login">Display</b-button>
+        <b-button v-bind:variant="navColor" href="/login">For store</b-button>
+<!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->
+<!--          <b-dropdown-item href="#">단체소개</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">오시는 길</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">조직도</b-dropdown-item>-->
+<!--        </b-dropdown>-->
 
-        <b-dropdown id="dropdown-offset" offset="25" text="출판" class="m-2" v-bind:variant="navColor">
-          <b-dropdown-item href="#">스토어</b-dropdown-item>
-          <b-dropdown-item href="#">책소개</b-dropdown-item>
-          <b-dropdown-item href="#">편집장</b-dropdown-item>
-        </b-dropdown>
-        <b-dropdown id="dropdown-offset" offset="25" text="공연·전시" class="m-2" v-bind:variant="navColor">
-          <b-dropdown-item href="#">모집공지</b-dropdown-item>
-          <b-dropdown-item href="#">갤러리</b-dropdown-item>
-        </b-dropdown>
-        <b-dropdown id="dropdown-offset" offset="25" text="교육" class="m-2" v-bind:variant="navColor">
-          <b-dropdown-item href="#">모집공지</b-dropdown-item>
-          <b-dropdown-item href="#">갤러리</b-dropdown-item>
-        </b-dropdown>
+<!--        <b-dropdown id="dropdown-offset" offset="25" text="Education" class="m-2" v-bind:variant="navColor">-->
+<!--          <b-dropdown-item href="#">스토어</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">책소개</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">편집장</b-dropdown-item>-->
+<!--        </b-dropdown>-->
+<!--        <b-dropdown id="dropdown-offset" offset="25" text="Gallery" class="m-2" v-bind:variant="navColor">-->
+<!--          <b-dropdown-item href="#">모집공지</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">갤러리</b-dropdown-item>-->
+<!--        </b-dropdown>-->
+<!--        <b-dropdown id="dropdown-offset" offset="25" text="Artists" class="m-2" v-bind:variant="navColor">-->
+<!--          <b-dropdown-item href="#">모집공지</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">갤러리</b-dropdown-item>-->
+<!--        </b-dropdown>-->
 
-        <b-dropdown id="dropdown-offset" offset="25" text="작가군" class="m-2" v-bind:variant="navColor">
-          <b-dropdown-item href="#">Action</b-dropdown-item>
-          <b-dropdown-item href="#">Another action</b-dropdown-item>
-          <b-dropdown-item href="#">Something else here</b-dropdown-item>
-        </b-dropdown>
+<!--        <b-dropdown id="dropdown-offset" offset="25" text="Display" class="m-2" v-bind:variant="navColor">-->
+<!--          <b-dropdown-item href="#">Action</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">Another action</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">Something else here</b-dropdown-item>-->
+<!--        </b-dropdown>-->
+<!--        <b-dropdown id="dropdown-offset" offset="25" text="For store" class="m-2" v-bind:variant="navColor">-->
+<!--          <b-dropdown-item href="#">Action</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">Another action</b-dropdown-item>-->
+<!--          <b-dropdown-item href="#">Something else here</b-dropdown-item>-->
+<!--        </b-dropdown>-->
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
@@ -77,6 +88,7 @@
 <script>
 import * as user from "@/api/user";
 import * as auth from "@/api/auth";
+import router from "@/router";
 
 export default {
   name: "Header.vue",
@@ -91,6 +103,10 @@ export default {
   methods: {
     async logout(){
       await auth.logout(auth.getToken(), auth.getRefreshToken());
+    },
+    goto(){
+      console.log("asd");
+      router.push("/");
     }
  // name: "header"
 
