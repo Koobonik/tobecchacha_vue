@@ -2,6 +2,11 @@
   <b-container class="bv-example-row">
     <b-row>
       <b-col lg="6" aria-controls="overlay-background">
+        <div>
+          <img v-if="shown" src="../../assets/chalogo.png" v-b-hover="hoverEvent" />
+          <div v-else>helloworld</div>
+        </div>
+
         <b-form-group label="Variant" label-for="bg-variant" label-cols-sm="4" label-cols-lg="12">
           <b-form-select id="bg-variant" v-model="variant" :options="variants"></b-form-select>
         </b-form-group>
@@ -54,10 +59,12 @@
 </template>
 
 <script>
+import * as booksApi from "@/api/books";
 export default {
 name: "BooksPage",
   data() {
     return {
+      shown: false,
       variant: 'light',
       opacity: 0.85,
       blur: '2px',
@@ -80,6 +87,23 @@ name: "BooksPage",
         '5px',
         '0.5em',
         '1rem'
+      ],
+      books: [
+          'id',
+          'price',
+          'title',
+          'content',
+          'createdWho',
+          'images',
+          'width',
+          'height',
+          'depth',
+          'publishingHouse',
+          'ISBN',
+          'pages',
+          'tableOfContent',
+          'nPayLink'
+
       ]
     }
   },
@@ -87,13 +111,31 @@ name: "BooksPage",
     hoverEvent(isHovered){
       if(isHovered){
         this.opacity = 0.2;
+        this.shown = true;
       }
       else {
         this.opacity = 1.0;
+        this.shown = false;
       }
       console.log("asdasd");
+    },
+    getBooks(page, size){
+      booksApi.getBooksPageSize(page, size).then(response => {
+        console.log('허허');
+
+        this.books = response;
+
+        console.log(this.books[0].images.length);
+      }).catch(error => {
+        console.log(error);
+      })
     }
+
   },
+  async created() {
+    await this.getBooks(0, 10);
+
+  }
 }
 </script>
 
