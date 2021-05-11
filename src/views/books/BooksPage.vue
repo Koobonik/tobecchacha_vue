@@ -1,8 +1,7 @@
 <template>
   <b-container class="bv-example-row">
-    <b-row>
-      <b-col lg="6" aria-controls="overlay-background">
-        <div v-for="item in books" :key="item.id">
+    <b-col>
+      <b-row v-for="item in books" :key="item.id" lg="6" aria-controls="overlay-background">
           <b-carousel
               id="carousel-1"
               v-model="slide"
@@ -20,16 +19,19 @@
             <b-carousel-slide
                 :key="image"
                 v-for="image in item.images"
-                caption="First slide"
-                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
                 v-bind:img-src="image"
-            ></b-carousel-slide>
+                v-b-hover="hoverEvent"
+            >
+              <div v-if="shown">
+                <h4>{{ item.title }}</h4>
+                <h3>{{ item.createdWho }}</h3>
+                <h4>{{ item.price }}원</h4>
+              </div>
+            </b-carousel-slide>
 
 
             <!-- Slides with custom text -->
           </b-carousel>
-          <div>{{ item.title }}</div>
-        </div>
 
 <!--        <b-form-group label="Variant" label-for="bg-variant" label-cols-sm="4" label-cols-lg="12">-->
 <!--          <b-form-select id="bg-variant" v-model="variant" :options="variants"></b-form-select>-->
@@ -77,8 +79,8 @@
 <!--            <b-button disabled variant="primary">Button</b-button>-->
 <!--          </b-card>-->
 <!--        </b-overlay>-->
-      </b-col>
-    </b-row>
+      </b-row>
+    </b-col>
   </b-container>
 </template>
 
@@ -127,11 +129,13 @@ name: "BooksPage",
           'pages',
           'tableOfContent',
           'nPayLink',
+          'shown'
       ]
     }
   },
   methods: {
     hoverEvent(isHovered){
+      console.log(isHovered);
       if(isHovered){
         this.opacity = 0.2;
         this.shown = true;
@@ -140,15 +144,21 @@ name: "BooksPage",
         this.opacity = 1.0;
         this.shown = false;
       }
-      console.log("asdasd");
+    },
+    changeShown(item){
+      console.log("바꾸니다");
+      item.shown = !item.shown;
     },
     getBooks(page, size){
       booksApi.getBooksPageSize(page, size).then(response => {
         console.log('허허');
 
         this.books = response;
+        for(var i = 0; i < this.books.length; i++){
+          this.books[i].shown = false;
+        }
 
-        console.log(this.books[0].images.length);
+        console.log(this.books);
       }).catch(error => {
         console.log(error);
       })
