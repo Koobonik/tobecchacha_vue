@@ -9,6 +9,7 @@ import Logout from "@/views/login/Logout";
 import FindPassword from "@/views/find/FindPassword";
 import ResetPassword from "@/views/find/ResetPassword";
 import BooksPage from "@/views/books/BooksPage";
+import BookDetail from "./views/books/BookDetail";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: "history",
@@ -48,6 +49,10 @@ const router = new VueRouter({
         {
             path: "/books",
             component: BooksPage
+        },
+        {
+            path: "/bookDetail",
+            component: BookDetail
         },
     ]
 });

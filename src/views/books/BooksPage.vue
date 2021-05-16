@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row">
     <b-col>
-      <b-row v-for="item in books" :key="item.id" lg="6" aria-controls="overlay-background">
+      <b-row v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background">
           <b-carousel
               id="carousel-1"
               v-model="slide"
@@ -17,12 +17,13 @@
           >
             <!-- Text slides with image -->
             <b-carousel-slide
-                :key="image"
-                v-for="image in item.images"
+                v-for="(image, j) in item.images"
+                :key="j"
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div v-if="shown">
+              <div v-if="shown" v-on:click="bookDetailPage">
+                <h4>{{ item.id }}</h4>
                 <h4>{{ item.title }}</h4>
                 <h3>{{ item.createdWho }}</h3>
                 <h4>{{ item.price }}원</h4>
@@ -86,6 +87,7 @@
 
 <script>
 import * as booksApi from "@/api/books";
+import router from "../../router";
 export default {
 name: "BooksPage",
   data() {
@@ -134,6 +136,15 @@ name: "BooksPage",
     }
   },
   methods: {
+    onSlideStart(slide) {
+      this.sliding = true;
+      this.slide = slide;
+    },
+    // eslint-disable-next-line no-unused-vars
+    onSlideEnd(slide) {
+      this.sliding = false;
+      this.slide = slide;
+    },
     hoverEvent(isHovered){
       console.log(isHovered);
       if(isHovered){
@@ -162,6 +173,10 @@ name: "BooksPage",
       }).catch(error => {
         console.log(error);
       })
+    },
+    bookDetailPage () {
+      console.log("asdasd");
+      router.go("/bookDetail/11");
     }
 
   },
