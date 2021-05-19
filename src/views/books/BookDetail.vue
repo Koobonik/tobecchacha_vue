@@ -34,7 +34,7 @@
           출판 : {{books.createdWho}}
         </b-card-text>
         <b-card-text>
-          ISBN : {{books.ISBN}}
+          ISBN : {{books.isbn}}
         </b-card-text>
         <b-card-text>
           {{ books.pages }}Pages, {{books.bookBinding}}, {{books.width}}cm*{{books.height}}cm*{{books.depth}}cm
@@ -75,7 +75,7 @@ name: "BookDetail",
         'height': 0,
         'depth' : 0,
         'publishingHouse': '',
-        'ISBN': '',
+        'isbn': '',
         'pages' : 0,
         'tableOfContent' : '',
         'npayLink':'',
