@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import * as user from "@/api/user";
 
 export default {
   name: "Member.vue",
@@ -38,18 +37,6 @@ export default {
   },
   methods: {
     getData() {
-      user.getMembers().then(response => {
-        console.log(response.data);
-        // this.members.push(response.data);
-        console.log(response.data.length);
-        for (let i = 0; i < response.data.length; i++) {
-          this.members.push(response.data[i]);
-          console.log(response.data[i]);
-        }
-        // this.members = response.data;
-      }).catch(error => {
-        console.log(error);
-      });
     }
   },
   created() {

@@ -9,3 +9,12 @@ export async function getBooksPageSize(page, size){
         return null;
     })
 }
+export async function getBookDetail(id){
+    return http.get(`/api/v1/books/getBookDetail/${id}`).then(response => {
+        console.log(response.data);
+        return response.data;
+    }).catch(error => {
+        console.log(error);
+        return null;
+    })
+}

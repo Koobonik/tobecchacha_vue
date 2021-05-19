@@ -22,7 +22,7 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div style="width: 100%; height: 200px;" v-if="shown"  v-on:click="bookDetailPage(item.id)">
+              <div v-if="shown"  v-on:click="bookDetailPage(item.id)">
                 <h4>{{ item.id }}</h4>
                 <h4>{{ item.title }}</h4>
                 <h3>{{ item.createdWho }}</h3>
@@ -176,7 +176,7 @@ name: "BooksPage",
     },
     bookDetailPage (id) {
       console.log("asdasd");
-      router.push(`/bookDetail/${id}`);
+      router.push(`/bookDetail?id=${id}`);
     }
 
   },
