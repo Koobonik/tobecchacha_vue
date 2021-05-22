@@ -10,9 +10,9 @@
 
 
         <b-button v-bind:variant="navColor" href="/books">Books</b-button>
-        <b-button v-bind:variant="navColor" href="/login">Artists</b-button>
-        <b-button v-bind:variant="navColor" href="/login">Education</b-button>
+        <b-button v-bind:variant="navColor" href="/education">Education</b-button>
         <b-button v-bind:variant="navColor" href="/login">Gallery</b-button>
+        <b-button v-bind:variant="navColor" href="/login">Artists</b-button>
         <b-button v-bind:variant="navColor" href="/login">Display</b-button>
         <b-button v-bind:variant="navColor" href="/login">For store</b-button>
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->

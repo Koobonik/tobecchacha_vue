@@ -10,6 +10,8 @@ import FindPassword from "@/views/find/FindPassword";
 import ResetPassword from "@/views/find/ResetPassword";
 import BooksPage from "@/views/books/BooksPage";
 import BookDetail from "./views/books/BookDetail";
+import EducationPage from "@/views/education/EducationPage";
+import EducationDetail from "@/views/education/EducationDetail";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: "history",
@@ -53,6 +55,14 @@ const router = new VueRouter({
         {
             path: "/bookDetail",
             component: BookDetail
+        },
+        {
+            path: "/education",
+            component: EducationPage
+        },
+        {
+            path: "/educationDetail",
+            component: EducationDetail
         },
     ]
 });

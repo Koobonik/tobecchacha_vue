@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row">
     <b-row>
-      <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px">
+      <b-col v-for="(item, i) in education" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px">
           <b-carousel
               id="carousel-1"
               v-model="slide"
@@ -20,11 +20,9 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div v-if="shown"  v-on:click="bookDetailPage(item.id)">
-                <h4>{{ item.id }}</h4>
+              <div v-if="shown"  v-on:click="educationDetailPage(item.id)">
                 <h4>{{ item.title }}</h4>
-                <h3>{{ item.createdWho }}</h3>
-                <h4>{{ item.price }}원</h4>
+                <h3>With {{ item.withWho }}</h3>
               </div>
             </b-carousel-slide>
 
@@ -84,10 +82,10 @@
 </template>
 
 <script>
-import * as booksApi from "@/api/books";
+import * as educationApi from "@/api/education";
 import router from "../../router";
 export default {
-name: "BooksPage",
+name: "EducationPage",
   data() {
     return {
       shown: false,
@@ -114,21 +112,14 @@ name: "BooksPage",
         '0.5em',
         '1rem'
       ],
-      books: [
+      education: [
           'id',
           'price',
           'title',
           'content',
-          'createdWho',
+          'withWho',
           'images',
-          'width',
-          'height',
-          'depth',
-          'publishingHouse',
-          'ISBN',
-          'pages',
-          'tableOfContent',
-          'nPayLink',
+          'introduction',
           'shown'
       ]
     }
@@ -158,28 +149,28 @@ name: "BooksPage",
       console.log("바꾸니다");
       item.shown = !item.shown;
     },
-    getBooks(page, size){
-      booksApi.getBooksPageSize(page, size).then(response => {
+    getEducation(page, size){
+      educationApi.getEducationPageSize(page, size).then(response => {
         console.log('허허');
 
-        this.books = response;
-        for(var i = 0; i < this.books.length; i++){
-          this.books[i].shown = false;
+        this.education = response;
+        for(var i = 0; i < this.education.length; i++){
+          this.education[i].shown = false;
         }
 
-        console.log(this.books);
+        console.log(this.education);
       }).catch(error => {
         console.log(error);
       })
     },
-    bookDetailPage (id) {
+    educationDetailPage (id) {
       console.log("asdasd");
-      router.push(`/bookDetail?id=${id}`);
+      router.push(`/educationDetail?id=${id}`);
     }
 
   },
   async created() {
-    await this.getBooks(0, 10);
+    await this.getEducation(0, 10);
 
   }
 }
