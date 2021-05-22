@@ -20,7 +20,7 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <h3 style="color: white;">{{item.title}}</h3>\
+              <h3 style="color: white;">{{item.title}}</h3>
               <h4 style="color: black; text-align: left;">With</h4>
               <h4 style="color: black; text-align: left;">{{item.withWho}}</h4>
 
