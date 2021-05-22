@@ -20,10 +20,15 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div v-if="shown"  v-on:click="educationDetailPage(item.id)">
-                <h4>{{ item.title }}</h4>
-                <h3>With {{ item.withWho }}</h3>
-              </div>
+              <h3 style="color: white;">{{item.title}}</h3>\
+              <h4 style="color: black; text-align: left;">With</h4>
+              <h4 style="color: black; text-align: left;">{{item.withWho}}</h4>
+
+<!--/*              <div style="text-align-all: center">asd</div>*/-->
+<!--              <div v-if="shown"  v-on:click="educationDetailPage(item.id)">-->
+<!--                <h4>{{ item.title }}</h4>-->
+<!--                <h3>With {{ item.withWho }}</h3>-->
+<!--              </div>-->
             </b-carousel-slide>
 
 
@@ -120,8 +125,8 @@ name: "EducationPage",
           'withWho',
           'images',
           'introduction',
-          'shown'
-      ]
+          'shown',
+      ],
     }
   },
   methods: {
@@ -157,7 +162,6 @@ name: "EducationPage",
         for(var i = 0; i < this.education.length; i++){
           this.education[i].shown = false;
         }
-
         console.log(this.education);
       }).catch(error => {
         console.log(error);
