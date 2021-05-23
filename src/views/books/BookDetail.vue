@@ -63,7 +63,8 @@ export default {
 name: "BookDetail",
   data() {
     return {
-
+      slide: 0,
+      sliding: null,
       books: {
         'id': 0,
         'price' : 0,

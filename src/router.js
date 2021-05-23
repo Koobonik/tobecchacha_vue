@@ -12,6 +12,8 @@ import BooksPage from "@/views/books/BooksPage";
 import BookDetail from "./views/books/BookDetail";
 import EducationPage from "@/views/education/EducationPage";
 import EducationDetail from "@/views/education/EducationDetail";
+import GalleryPage from "@/views/gallery/GalleryPage";
+import GalleryDetail from "@/views/gallery/GalleryDetail";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: "history",
@@ -63,6 +65,14 @@ const router = new VueRouter({
         {
             path: "/educationDetail",
             component: EducationDetail
+        },
+        {
+            path: "/gallery",
+            component: GalleryPage
+        },
+        {
+            path: "/galleryDetail",
+            component: GalleryDetail
         },
     ]
 });

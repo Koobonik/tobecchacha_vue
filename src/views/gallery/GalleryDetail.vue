@@ -15,46 +15,56 @@
     >
       <!-- Text slides with image -->
       <b-carousel-slide
-          v-for="(image, j) in education.images"
+          v-for="(image, j) in gallery.images"
           :key="j"
           v-bind:img-src="image"
       >
+        <p style="color: black">{{gallery.imagesDescription[j]}} / {{gallery.width}}cm*{{gallery.height}}cm digital inkjet print</p>
       </b-carousel-slide>
 
 
       <!-- Slides with custom text -->
     </b-carousel>
     <br>
-    <div>
-      <h3>프로그램 개요</h3><br>
-      <h4>{{ education.introduction }}</h4>
-      <br><br>
-      <h5>{{education.content}}</h5>
-    </div>
+    <p> 작가 : {{gallery.createdWho}} / {{gallery.createdEmail}}<img style="padding-left: 20px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png"> </p>
 
-    <hr style="border: 1px solid black">
-
+    <b-card-text style="text-align: left; padding-left: 50px;">
+      <h3>{{ gallery.title }}</h3>
+    </b-card-text>
+    <b-card-text>
+      {{ gallery.content }}
+    </b-card-text>
+    <b-card-text>
+      {{ $moment(gallery.createdDate).format('YYYY년 MM월') }} {{ gallery.information }}
+    </b-card-text>
   </div>
 
 </template>
 
 <script>
-import * as educationApi from "@/api/education";
+import * as galleryApi from "@/api/gallery";
 
 export default {
-name: "EducationDetail",
+name: "GalleryDetail",
   data() {
     return {
       slide: 0,
       sliding: null,
-      education: {
+      gallery: {
         'id': 0,
         'price' : 0,
         'title' : '',
         'content' : '',
-        'withWho': '',
+        'createdWho': '',
         'images': [],
-        'introduction' : '',
+        'imagesDescription' : [],
+        'width' : 0,
+        'height': 0,
+        'npayLink':'',
+        'createdEmail' : '',
+        'createdDate' : '',
+        'information': '',
+
       }
     }
   },
@@ -70,18 +80,18 @@ name: "EducationDetail",
     },
     getBookDetail(id){
       console.log(`${id}`);
-      educationApi.getEducationDetail(id).then(response => {
+      galleryApi.getGalleryDetail(id).then(response => {
 
 
-        this.education = response;
+        this.gallery = response;
         console.log("여기를봐");
-        console.log(this.education.images);
+        console.log(this.gallery.images);
       }).catch(error => {
         console.log(error);
       })
     },
     openNpayLink(){
-      window.open(this.education.npayLink, '_blank').focus();
+      window.open(this.gallery.npayLink, '_blank').focus();
     }
 
   },

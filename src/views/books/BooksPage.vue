@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row">
     <b-row>
-      <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px">
+      <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
           <b-carousel
               id="carousel-1"
               v-model="slide"
@@ -20,7 +20,7 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div v-if="shown"  v-on:click="bookDetailPage(item.id)">
+              <div v-if="shown">
                 <h4>{{ item.id }}</h4>
                 <h4>{{ item.title }}</h4>
                 <h3>{{ item.createdWho }}</h3>
@@ -90,6 +90,8 @@ export default {
 name: "BooksPage",
   data() {
     return {
+      slide: 0,
+      sliding: null,
       shown: false,
       variant: 'light',
       opacity: 0.85,
