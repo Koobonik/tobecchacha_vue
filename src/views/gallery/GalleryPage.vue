@@ -12,6 +12,7 @@
               style="text-shadow: 1px 1px 2px #333;"
               @sliding-start="onSlideStart"
               @sliding-end="onSlideEnd"
+
           >
             <!-- Text slides with image -->
             <b-carousel-slide
@@ -19,6 +20,7 @@
                 :key="j"
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
+                style="background-color:rgba(0, 0, 0, 0.5); position: absolute;"
             >
               <div v-if="shown">
                 <h4>제목 : <strong>{{ item.title }}</strong></h4>
