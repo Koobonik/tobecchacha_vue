@@ -28,7 +28,7 @@
     <br>
     <p> 작가 : {{gallery.createdWho}} / {{gallery.createdEmail}}<img style="padding-left: 20px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png"> </p>
 
-    <b-card-text style="text-align: left; padding-left: 50px;">
+    <b-card-text style="text-align: center; padding-left: 50px;">
       <h3>{{ gallery.title }}</h3>
     </b-card-text>
     <b-card-text>
