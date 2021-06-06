@@ -21,7 +21,8 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div style="" class="info" v-if="shown">
+<!--              <div style="" class="info" v-if="shown">-->
+              <div class="info">
                 <h4>{{ item.id }}</h4>
                 <h4>{{ item.title }}</h4>
                 <h3>{{ item.createdWho }}</h3>
@@ -84,13 +85,13 @@
   </b-container>
 </template>
 <style>
-.itemColumn:hover{
-  filter: brightness(50%);
-}
-.info:hover {
-
+.itemColumn:hover:not(.info:hover){
   filter: brightness(100%);
   z-index: 2;
+}
+.info:hover {
+  filter: brightness(100%);
+  z-index: 3;
 }
 </style>
 <script>
