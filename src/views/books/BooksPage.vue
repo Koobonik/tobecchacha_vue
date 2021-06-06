@@ -1,5 +1,7 @@
 <template>
   <b-container class="bv-example-row">
+    <b-button v-on:click="getBooks(0,10)">테스트 버튼</b-button>
+    ㅁㄴㅇ
     <b-row>
       <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
           <b-carousel
@@ -173,9 +175,9 @@ name: "BooksPage",
     },
     getBooks(page, size){
       booksApi.getBooksPageSize(page, size).then(response => {
-        console.log('허허');
 
         this.books = response;
+        console.log(this.books);
         for(var i = 0; i < this.books.length; i++){
           this.books[i].shown = false;
         }
@@ -183,7 +185,7 @@ name: "BooksPage",
         console.log(this.books);
       }).catch(error => {
         console.log(error);
-      })
+      });
     },
     bookDetailPage (id) {
       console.log("asdasd");
@@ -191,9 +193,23 @@ name: "BooksPage",
     }
 
   },
+  async beforeCreate() {
+
+  },
   async created() {
     await this.getBooks(0, 10);
-
+  },
+  async beforeMount() {
+  },
+  async mounted() {
+  },
+  beforeUpdate() {
+  },
+  updated() {
+  },
+  beforeDestroy() {
+  },
+  destroyed() {
   }
 }
 </script>
