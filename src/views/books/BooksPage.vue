@@ -3,6 +3,7 @@
     <b-row>
       <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
           <b-carousel
+              class="itemColumn"
               id="carousel-1"
               v-model="slide"
               :interval="4000"
@@ -20,7 +21,7 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div v-if="shown">
+              <div style="" class="info" v-if="shown">
                 <h4>{{ item.id }}</h4>
                 <h4>{{ item.title }}</h4>
                 <h3>{{ item.createdWho }}</h3>
@@ -82,7 +83,16 @@
     </b-row>
   </b-container>
 </template>
+<style>
+.itemColumn:hover{
+  filter: brightness(50%);
+}
+.info:hover {
 
+  filter: brightness(100%);
+  z-index: 2;
+}
+</style>
 <script>
 import * as booksApi from "@/api/books";
 import router from "../../router";
