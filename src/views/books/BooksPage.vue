@@ -1,5 +1,6 @@
 <template>
   <b-container class="bv-example-row">
+    <b-button v-on:click="getBooks(0,10)"></b-button>
     <b-row>
       <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
           <b-carousel
@@ -172,9 +173,11 @@ name: "BooksPage",
       item.shown = !item.shown;
     },
     getBooks(page, size){
+      alert("시작");
       booksApi.getBooksPageSize(page, size).then(response => {
-
+        alert("시작22");
         this.books = response;
+        alert("시작33");
         console.log(this.books);
         for(var i = 0; i < this.books.length; i++){
           this.books[i].shown = false;
