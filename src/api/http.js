@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(function (config){
-    alert(config.url);
+    console.log(config.url);
     // console.log(config.baseURL+'/api/v1/findPassword');
     // if(config.url === '/api/v1/findPassword'){
     //     alert("이메일을 전송하였습니다.");
@@ -20,7 +20,6 @@ instance.interceptors.request.use(function (config){
 
 instance.interceptors.response.use(
     function (response) {
-        alert(response);
         /*
             http status가 200인 경우
             응답 성공 직전 호출됩니다.

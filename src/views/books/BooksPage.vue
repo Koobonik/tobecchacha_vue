@@ -173,11 +173,9 @@ name: "BooksPage",
       item.shown = !item.shown;
     },
     getBooks(page, size){
-      alert("시작");
       booksApi.getBooksPageSize(page, size).then(response => {
-        alert("시작22");
+
         this.books = response;
-        alert("시작33");
         console.log(this.books);
         for(var i = 0; i < this.books.length; i++){
           this.books[i].shown = false;
