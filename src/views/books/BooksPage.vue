@@ -1,6 +1,5 @@
 <template>
   <b-container class="bv-example-row">
-    <b-button v-on:click="getBooks(0,10)">asdasd</b-button>
     <b-row>
       <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
           <b-carousel
