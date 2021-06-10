@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="light" v-bind:variant="navColor">
-      <b-navbar-brand href="/"><img alt="Vue logo" src="../../assets/chalogo.png"></b-navbar-brand>
+    <b-navbar toggleable="lg" type="light" style="background-color: white">
+      <b-navbar-brand href="/"><img style="height: 100px" alt="Vue logo" src="../../assets/logo_2.jpg"></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -9,12 +9,12 @@
       <b-collapse id="nav-collapse" is-nav>
 
 
-        <b-button v-bind:variant="navColor" href="/books">Books</b-button>
-        <b-button v-bind:variant="navColor" href="/education">Education</b-button>
-        <b-button v-bind:variant="navColor" href="/gallery">Gallery</b-button>
-        <b-button v-bind:variant="navColor" href="/login">Artists</b-button>
-        <b-button v-bind:variant="navColor" href="/login">Display</b-button>
-        <b-button v-bind:variant="navColor" href="/login">For store</b-button>
+        <b-button style="background-color: white; color: black" href="/books">Books</b-button>
+        <b-button style="background-color: white; color: black;" href="/education">Education</b-button>
+        <b-button style="background-color: white; color: black" href="/gallery">Gallery</b-button>
+        <b-button style="background-color: white; color: black" href="/login">Artists</b-button>
+        <b-button style="background-color: white; color: black" href="/login">Display</b-button>
+        <b-button style="background-color: white; color: black" href="/login">For store</b-button>
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->
 <!--          <b-dropdown-item href="#">단체소개</b-dropdown-item>-->
 <!--          <b-dropdown-item href="#">오시는 길</b-dropdown-item>-->
