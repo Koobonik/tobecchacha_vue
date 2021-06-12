@@ -21,7 +21,7 @@
                 v-bind:img-src="image"
                 v-b-hover="hoverEvent"
             >
-              <div v-if="shown">
+              <div>
                 <h4>제목 : <strong>{{ item.title }}</strong></h4>
                 <h4>작가 : <strong>{{item.createdWho}}</strong></h4>
               </div>
