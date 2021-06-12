@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" style="background-color: white">
-      <b-navbar-brand href="/"><img style="height: 100px" alt="Vue logo" src="../../assets/logo_2.jpg"></b-navbar-brand>
+      <b-navbar-brand href="/"><img style="height: 60px" alt="Vue logo" src="../../assets/logo_2.jpg"></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -9,12 +9,12 @@
       <b-collapse id="nav-collapse" is-nav>
 
 
-        <b-button style="background-color: white; color: black" href="/books">Books</b-button>
-        <b-button style="background-color: white; color: black;" href="/education">Education</b-button>
-        <b-button style="background-color: white; color: black" href="/gallery">Gallery</b-button>
-        <b-button style="background-color: white; color: black" href="/login">Artists</b-button>
-        <b-button style="background-color: white; color: black" href="/login">Display</b-button>
-        <b-button style="background-color: white; color: black" href="/login">For store</b-button>
+        <b-button class="bButton" style="background-color: white; color: black; margin-right: 10px" href="/books">Books</b-button>
+        <b-button style="background-color: white; color: black; margin-right: 10px" href="/education">Education</b-button>
+        <b-button style="background-color: white; color: black; margin-right: 10px" href="/gallery">Gallery</b-button>
+        <b-button style="background-color: white; color: black; margin-right: 10px" href="/login">Artists</b-button>
+        <b-button style="background-color: white; color: black; margin-right: 10px" href="/login">Display</b-button>
+        <b-button style="background-color: white; color: black; margin-right: 10px" href="/login">For store</b-button>
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->
 <!--          <b-dropdown-item href="#">단체소개</b-dropdown-item>-->
 <!--          <b-dropdown-item href="#">오시는 길</b-dropdown-item>-->
@@ -45,7 +45,10 @@
 <!--          <b-dropdown-item href="#">Another action</b-dropdown-item>-->
 <!--          <b-dropdown-item href="#">Something else here</b-dropdown-item>-->
 <!--        </b-dropdown>-->
-        <b-navbar-nav class="ml-auto">
+
+
+<!--    회원 로그인/로그아웃에 대한 컴포넌트임    -->
+        <b-navbar-nav v-show="false" class="ml-auto">
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
@@ -61,6 +64,7 @@
             </div>
 
           </b-nav-item-dropdown>
+
           <!--          <b-nav-form>-->
           <!--            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>-->
           <!--            <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>-->
@@ -81,6 +85,10 @@
   </div>
 </template>
 <style>
+  b-button{
+    background-color: white;
+    color: red;
+  }
 .m-2{
   color:darkgreen
 }

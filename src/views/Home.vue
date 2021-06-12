@@ -1,7 +1,7 @@
 <template>
   <div>
     <MainPageImageSlider/>
-    <h1>Welcome to {{ title }}!</h1>
+<!--    <h1>Welcome to {{ title }}!</h1>-->
 
 <!--    <input type="text" v-model="input1" />-->
 <!--    <button type="button" @click="getData">Get</button>-->
@@ -33,7 +33,7 @@ export default {
   components: {MainPageImageSlider},
   data(){
     return {
-      title:"pwmw의 품격",
+      title:"문화온도 씨도씨",
       input1: "이런식으로!",
       tableShow: false,
       options: [
