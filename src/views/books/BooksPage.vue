@@ -5,7 +5,7 @@
           <b-carousel
               class="itemColumn"
               id="carousel-1"
-              v-model="slide"
+
               :interval=false
               controls
               indicators

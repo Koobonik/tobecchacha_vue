@@ -4,7 +4,7 @@
       <b-col v-for="(item, i) in gallery" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
           <b-carousel
               id="carousel-1"
-              v-model="slide"
+
               :interval=false
               controls
               indicators

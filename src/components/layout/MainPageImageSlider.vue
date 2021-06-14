@@ -2,7 +2,7 @@
   <div v-on:click="helloWorld">
     <b-carousel
         id="carousel-1"
-        v-model="slide"
+
         :interval=false
         controls
         indicators
