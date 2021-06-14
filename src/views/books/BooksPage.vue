@@ -6,7 +6,7 @@
               class="itemColumn"
               id="carousel-1"
               v-model="slide"
-              :interval="4000"
+              :interval=false
               controls
               indicators
               background="#abcdef"
