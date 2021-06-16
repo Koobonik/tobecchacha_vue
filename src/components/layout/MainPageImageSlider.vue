@@ -58,7 +58,13 @@
 <!--    </p>-->
   </div>
 </template>
-
+<style>
+  .carousel-item img {
+    width:100%!important ;
+    height: 400px;
+    object-fit: cover!important;
+  }
+</style>
 <script>
 export default {
   name: "MainPageImageSlider",
