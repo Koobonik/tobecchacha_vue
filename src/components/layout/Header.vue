@@ -6,14 +6,19 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
 <!--   가로 사이즈 줄어들면 숨어버림!   -->
-      <b-collapse id="nav-collapse" is-nav>
+      <b-collapse id="nav-collapse" is-nav style="align-content: start">
 
 
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/books">Books</b-button>
+        <br>
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/education">Education</b-button>
+        <br>
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/gallery">Gallery</b-button>
+        <br>
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">Artists</b-button>
+        <br>
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">Display</b-button>
+        <br>
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">For store</b-button>
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->
 <!--          <b-dropdown-item href="#">단체소개</b-dropdown-item>-->

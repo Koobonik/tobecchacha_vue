@@ -42,16 +42,13 @@
         <b-card-text>
           {{ $moment(books.createdDate).format('YYYY년MM월DD일') }} {{books.edition}} {{books.editionNumber}}쇄 {{books.price}}원
         </b-card-text>
-      </b-col>
-      <b-col>
-        <img v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png">
-
+        <img v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png" style="height: 30px">
       </b-col>
     </b-row>
     <hr style="border: 1px solid black">
-    <b-card-text>{{books.content}}</b-card-text>
-    <br>
-    <b-card-text>{{books.tableOfContent}}</b-card-text>
+    <b-card-text style="padding-right: 20px; padding-left: 20px; padding-top: 20px">{{books.content}}</b-card-text>
+<!--    <br>-->
+    <b-card-text style="padding: 20px">{{books.tableOfContent}}</b-card-text>
   </div>
 
 </template>

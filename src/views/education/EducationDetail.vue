@@ -27,7 +27,7 @@
     <br>
     <div>
       <h3>프로그램 개요</h3><br>
-      <h4>{{ education.introduction }}</h4>
+      <h4 style="padding: 20px">{{ education.introduction }}</h4>
       <br><br>
       <h5>{{education.content}}</h5>
     </div>

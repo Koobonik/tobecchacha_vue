@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row">
     <b-row>
-      <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
+      <b-col v-for="(item, i) in books" :key="i" lg="6" aria-controls="overlay-background" style="padding: 10px" v-on:click="bookDetailPage(item.id)">
           <b-carousel
               class="itemColumn"
               id="carousel-1"
