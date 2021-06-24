@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row">
     <b-row>
-      <b-col v-for="(item, i) in gallery" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="bookDetailPage(item.id)">
+      <b-col v-for="(item, i) in gallery" :key="i" lg="6" aria-controls="overlay-background" style="padding: 30px" v-on:click="GalleryDetailPage(item.id)">
           <b-carousel
               id="carousel-1"
 
@@ -108,7 +108,7 @@ name: "GalleryPage",
       console.log("바꾸니다");
       item.shown = !item.shown;
     },
-    getBooks(page, size){
+    getGallery(page, size){
       galleryApi.getGalleryPageSize(page, size).then(response => {
         console.log('허허');
 
@@ -122,13 +122,13 @@ name: "GalleryPage",
         console.log(error);
       })
     },
-    bookDetailPage (id) {
+    GalleryDetailPage (id) {
       router.push(`/galleryDetail?id=${id}`);
     }
 
   },
   async created() {
-    await this.getBooks(0, 10);
+    await this.getGallery(0, 10);
 
   }
 }

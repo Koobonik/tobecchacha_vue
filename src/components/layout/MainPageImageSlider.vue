@@ -66,12 +66,55 @@
   }
 </style>
 <script>
+  import * as booksApi from "../../api/books";
+  import * as educationApi from "../../api/education";
+  import * as galleryApi from "../../api/gallery";
 export default {
   name: "MainPageImageSlider",
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      books: [
+        'id',
+        'price',
+        'title',
+        'content',
+        'createdWho',
+        'images',
+        'width',
+        'height',
+        'depth',
+        'publishingHouse',
+        'ISBN',
+        'pages',
+        'tableOfContent',
+        'nPayLink',
+        'shown'
+      ],
+      education: [
+        'id',
+        'price',
+        'title',
+        'content',
+        'withWho',
+        'images',
+        'introduction',
+        'shown',
+      ],
+      gallery: [
+        'id',
+        'price',
+        'title',
+        'content',
+        'createdWho',
+        'images',
+        'width',
+        'height',
+        'nPayLink',
+        'imagesDescription',
+        'shown'
+      ],
     }
   },
   methods: {
@@ -88,7 +131,53 @@ export default {
     helloWorld(){
       console.log(this.slide);
     },
-  }
+    getBooks(page, size){
+      booksApi.getBooksPageSize(page, size).then(response => {
+
+        this.books = response;
+        console.log(this.books);
+        for(var i = 0; i < this.books.length; i++){
+          this.books[i].shown = false;
+        }
+
+        console.log(this.books);
+      }).catch(error => {
+        console.log(error);
+      });
+    },
+    getEducation(page, size){
+      educationApi.getEducationPageSize(page, size).then(response => {
+        console.log('허허');
+
+        this.education = response;
+        for(var i = 0; i < this.education.length; i++){
+          this.education[i].shown = false;
+        }
+        console.log(this.education);
+      }).catch(error => {
+        console.log(error);
+      })
+    },
+    getGallery(page, size){
+      galleryApi.getGalleryPageSize(page, size).then(response => {
+        console.log('허허');
+
+        this.gallery = response;
+        for(var i = 0; i < this.gallery.length; i++){
+          this.gallery[i].shown = false;
+        }
+
+        console.log(this.gallery);
+      }).catch(error => {
+        console.log(error);
+      })
+    },
+  },
+  async created() {
+    await this.getBooks(0, 3);
+    await this.getEducation(0,3);
+    await this.getGallery(0,3);
+  },
 }
 </script>
 
