@@ -52,6 +52,31 @@
       </b-carousel-slide>
     </b-carousel>
 
+    <div style="padding-top: 20px;"></div>
+    <b-carousel
+            id="carousel-1"
+            :interval=false
+            controls
+            indicators
+            background="#abcdef"
+            img-width="1024"
+            img-height="480"
+            style="text-shadow: 1px 1px 2px #333;"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+    >
+      <!-- Text slides with image -->
+      <b-carousel-slide
+              v-for="(book, j) in books"
+              :key="j"
+              v-bind:img-src="book.images[0]"
+
+      >
+      </b-carousel-slide>
+
+
+      <!-- Slides with custom text -->
+    </b-carousel>
 <!--    <p class="mt-4">-->
 <!--      Slide #: {{ slide }}<br>-->
 <!--      Sliding: {{ sliding }}-->
@@ -69,6 +94,7 @@
   import * as booksApi from "../../api/books";
   import * as educationApi from "../../api/education";
   import * as galleryApi from "../../api/gallery";
+  import router from "../../router";
 export default {
   name: "MainPageImageSlider",
   data() {
@@ -145,6 +171,10 @@ export default {
         console.log(error);
       });
     },
+    bookDetailPage (id) {
+      console.log("asdasd");
+      router.push(`/bookDetail?id=${id}`);
+    },
     getEducation(page, size){
       educationApi.getEducationPageSize(page, size).then(response => {
         console.log('허허');
@@ -157,6 +187,10 @@ export default {
       }).catch(error => {
         console.log(error);
       })
+    },
+    educationDetailPage (id) {
+      console.log("asdasd");
+      router.push(`/educationDetail?id=${id}`);
     },
     getGallery(page, size){
       galleryApi.getGalleryPageSize(page, size).then(response => {
@@ -172,6 +206,9 @@ export default {
         console.log(error);
       })
     },
+    GalleryDetailPage (id) {
+      router.push(`/galleryDetail?id=${id}`);
+    }
   },
   async created() {
     await this.getBooks(0, 3);
