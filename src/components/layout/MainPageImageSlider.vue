@@ -52,7 +52,8 @@
       </b-carousel-slide>
     </b-carousel>
 
-    <div style="padding-top: 20px;"></div>
+    <div style="padding-top: 40px;"></div>
+    <b-card-text style="text-align: start; margin-left: 20px"><img style="height: 40px" alt="Vue logo" src="../../assets/icons/icons8-read-100.png"> Books</b-card-text>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -70,12 +71,54 @@
               v-for="(book, j) in books"
               :key="j"
               v-bind:img-src="book.images[0]"
-
       >
       </b-carousel-slide>
+    </b-carousel>
 
+    <div style="padding-top: 40px;"></div>
+    <b-card-text style="text-align: start; margin-left: 20px"><img style="height: 40px" alt="Vue logo" src="../../assets/icons/icons8-tuition-90.png"> Education</b-card-text>
+    <b-carousel
+            id="carousel-1"
+            :interval=false
+            controls
+            indicators
+            background="#abcdef"
+            img-width="1024"
+            img-height="480"
+            style="text-shadow: 1px 1px 2px #333;"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+    >
+      <!-- Text slides with image -->
+      <b-carousel-slide
+              v-for="(book, j) in education"
+              :key="j"
+              v-bind:img-src="book.images[0]"
+      >
+      </b-carousel-slide>
+    </b-carousel>
 
-      <!-- Slides with custom text -->
+    <div style="padding-top: 40px;"></div>
+    <b-card-text style="text-align: start; margin-left: 20px"><img style="height: 40px" alt="Vue logo" src="../../assets/icons/icons8-photo-gallery-96.png"> Gallery</b-card-text>
+    <b-carousel
+            id="carousel-1"
+            :interval=false
+            controls
+            indicators
+            background="#abcdef"
+            img-width="1024"
+            img-height="480"
+            style="text-shadow: 1px 1px 2px #333;"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+    >
+      <!-- Text slides with image -->
+      <b-carousel-slide
+              v-for="(book, j) in gallery"
+              :key="j"
+              v-bind:img-src="book.images[0]"
+      >
+      </b-carousel-slide>
     </b-carousel>
 <!--    <p class="mt-4">-->
 <!--      Slide #: {{ slide }}<br>-->
