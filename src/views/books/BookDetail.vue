@@ -27,22 +27,34 @@
     <br>
     <b-row>
       <b-col style="width: 66%">
+<!--        <b-card-text>-->
+<!--          지은이 : {{books.createdWho}}-->
+<!--        </b-card-text>-->
+<!--        <b-card-text>-->
+<!--          출판 : {{books.createdWho}}-->
+<!--        </b-card-text>-->
         <b-card-text>
-          지은이 : {{books.createdWho}}
+          (제목) {{books.title}}
         </b-card-text>
         <b-card-text>
-          출판 : {{books.createdWho}}
+          (글, 그림 외) : {{books.createdWho}}
         </b-card-text>
         <b-card-text>
-          ISBN : {{books.isbn}}
+          (발행번호) : {{books.isbn}}
         </b-card-text>
         <b-card-text>
-          {{ books.pages }}Pages, {{books.bookBinding}}, {{books.width}}cm*{{books.height}}cm*{{books.depth}}cm
+          (페이지수) : {{books.pages}}, (제본) {{books.bookBinding}}
         </b-card-text>
         <b-card-text>
-          {{ $moment(books.createdDate).format('YYYY년MM월DD일') }} {{books.edition}} {{books.editionNumber}}쇄 {{books.price}}원
+          (책사이즈) : {{books.width}}cm*{{books.height}}cm*{{books.depth}}cm
         </b-card-text>
-        <img v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png" style="height: 30px">
+        <b-card-text>
+          (발행년월일) {{ $moment(books.createdDate).format('YYYY년MM월DD일') }} (발간정보) {{books.edition}} {{books.editionNumber}}쇄 {{books.price}}원
+        </b-card-text>
+        <b-card-text>
+          (제작) {{books.publishingHouse}} (가격) {{books.price}}원 <img v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png" style="height: 20px; margin-left: 10px;">
+        </b-card-text>
+
       </b-col>
     </b-row>
     <hr style="border: 1px solid black">

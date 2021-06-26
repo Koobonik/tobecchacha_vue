@@ -16,9 +16,7 @@
           >
             <!-- Text slides with image -->
             <b-carousel-slide
-                v-for="(image, j) in item.images"
-                :key="j"
-                v-bind:img-src="image"
+                v-bind:img-src="item.images[0]"
                 v-b-hover="hoverEvent"
             >
 <!--              <div style="" class="info" v-if="shown">-->
