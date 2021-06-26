@@ -27,7 +27,7 @@
     </b-carousel>
     <br>
     <div style="padding: 20px;">
-      <p> 작가 : {{gallery.createdWho}} / {{gallery.createdEmail}}<img style="padding-left: 20px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png"> </p>
+      <p> 작가 : {{gallery.createdWho}} / {{gallery.createdEmail}}</p>
 
       <b-card-text style="text-align: center; padding-left: 50px;">
         <h3>{{ gallery.title }}</h3>
@@ -38,6 +38,7 @@
       <b-card-text>
         {{ $moment(gallery.createdDate).format('YYYY년 MM월') }} {{ gallery.information }}
       </b-card-text>
+      <img style="padding-left: 20px; height: 30px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png">
     </div>
 
   </div>

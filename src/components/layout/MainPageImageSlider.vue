@@ -72,6 +72,7 @@
               :key="j"
               v-bind:img-src="book.images[0]"
       >
+        <div style="height: 1000px;" v-on:click="bookDetailPage(book.id)"></div>
       </b-carousel-slide>
     </b-carousel>
 
@@ -95,6 +96,7 @@
               :key="j"
               v-bind:img-src="book.images[0]"
       >
+        <div style="height: 1000px;" v-on:click="educationDetailPage(book.id)"></div>
       </b-carousel-slide>
     </b-carousel>
 
@@ -118,6 +120,7 @@
               :key="j"
               v-bind:img-src="book.images[0]"
       >
+        <div style="height: 1000px;" v-on:click="galleryDetailPage(book.id)"></div>
       </b-carousel-slide>
     </b-carousel>
 <!--    <p class="mt-4">-->
@@ -249,7 +252,7 @@ export default {
         console.log(error);
       })
     },
-    GalleryDetailPage (id) {
+    galleryDetailPage (id) {
       router.push(`/galleryDetail?id=${id}`);
     }
   },
