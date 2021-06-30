@@ -14,6 +14,7 @@ import EducationPage from "@/views/education/EducationPage";
 import EducationDetail from "@/views/education/EducationDetail";
 import GalleryPage from "@/views/gallery/GalleryPage";
 import GalleryDetail from "@/views/gallery/GalleryDetail";
+import ArtistsPage from "./views/artists/ArtistsPage";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: "history",
@@ -73,6 +74,10 @@ const router = new VueRouter({
         {
             path: "/galleryDetail",
             component: GalleryDetail
+        },
+        {
+            path: "/artists",
+            component: ArtistsPage
         },
     ]
 });

@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" style="background-color: white">
-      <b-navbar-brand href="/"><img style="height: 40px" alt="Vue logo" src="../../assets/logo_3.png"></b-navbar-brand>
+      <b-navbar-brand href="/"><img style="height: 40px; align-content: center" alt="Vue logo" src="../../assets/logo_3.png"></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -15,7 +15,7 @@
         <br>
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/gallery">Gallery</b-button>
         <br>
-        <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">Artists</b-button>
+        <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/artists">Artists</b-button>
         <br>
         <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">Display</b-button>
         <br>

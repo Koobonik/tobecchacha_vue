@@ -27,19 +27,19 @@
     </b-carousel>
     <br>
     <div style="padding: 20px;">
-      <p> (성명) {{gallery.createdWho}} </p>
+      <p>{{gallery.createdWho}}</p>
 
       <b-card-text style="text-align: center; padding-left: 50px;">
-        (제목) <strong>{{ gallery.title }}</strong>
+        <strong>{{ gallery.title }}</strong>
       </b-card-text>
       <b-card-text>
-        (작품 설명) {{ gallery.content }}
+        {{ gallery.content }}
       </b-card-text>
       <b-card-text>
-        (전시 정보) {{ $moment(gallery.createdDate).format('YYYY년 MM월') }} {{ gallery.information }}
+        {{ $moment(gallery.createdDate).format('YYYY년 MM월') }} {{ gallery.information }}
       </b-card-text>
       <b-card-text>
-        (작품 정보) 작품구입 가격{{ gallery.information }}원 (모든 작품) <img style="padding-left: 20px; height: 20px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png">
+        작품구입 가격{{ gallery.information }}원 <img style="padding-left: 20px; height: 20px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png">
       </b-card-text>
       <b-card-text>
         구매 문의 - {{gallery.createdEmail}}
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import * as galleryApi from "@/api/gallery";
+import * as galleryApi from "/src/api/gallery";
 
 export default {
 name: "GalleryDetail",
