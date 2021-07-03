@@ -39,7 +39,7 @@
               <b-row style="padding-left: 30px;">
                   <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{books.title}}</h1>
                   <div style="width: 20px"></div>
-                  <h6 style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{books.title}}</h6>
+                  <h6 style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{books.subTitle}}</h6>
               </b-row>
           </b-row>
 
@@ -60,7 +60,7 @@
                   <b-col>
                       <p class="b-card-text">{{books.isbn}}</p>
                       <p class="b-card-text">{{books.pages}}쪽</p>
-                      <p class="b-card-text">{{books.width}}mm * {{books.height}}mm * {{books.depth}}mm / </p>
+                      <p class="b-card-text">{{books.width}}mm * {{books.height}}mm * {{books.depth}}mm / {{books.weight}}g</p>
                       <p class="b-card-text">{{books.price}}원</p>
                   </b-col>
               </div>
@@ -115,12 +115,14 @@ name: "BookDetail",
         'id': 0,
         'price' : 0,
         'title' : '',
+        'subTitle' : '',
         'content' : '',
         'createdWho': '',
         'images': [],
         'width' : 0,
         'height': 0,
         'depth' : 0,
+        'weight': 0,
         'publishingHouse': '',
         'isbn': '',
         'pages' : 0,
