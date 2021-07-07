@@ -25,14 +25,27 @@
       <!-- Slides with custom text -->
     </b-carousel>
     <br>
-    <div>
-      <h3>프로그램 개요</h3><br>
-      <h4 style="padding: 20px">{{ education.introduction }}</h4>
-      <br><br>
-      <h5>{{education.content}}</h5>
-    </div>
 
-    <hr style="border: 1px solid black">
+    <b-row style="margin: 20px;">
+      <b-col style="text-align: left">
+        <b-row style="display: inline-block;">
+          <b-row style="padding-left: 30px;">
+            <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{education.title}}</h1>
+            <div style="width: 20px"></div>
+            <h6 style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{education.subTitle}}</h6>
+          </b-row>
+        </b-row>
+
+
+
+        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">프로그램 개요</div>
+
+        <div style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{education.introduction}}</div>
+
+      </b-col>
+    </b-row>
+
+<!--    <hr style="border: 1px solid black">-->
 
   </div>
 
@@ -51,6 +64,7 @@ name: "EducationDetail",
         'id': 0,
         'price' : 0,
         'title' : '',
+        'subTitle' : '',
         'content' : '',
         'withWho': '',
         'images': [],

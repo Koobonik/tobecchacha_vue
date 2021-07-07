@@ -27,14 +27,6 @@
     <br>
     <b-row style="margin: 20px;">
       <b-col style="text-align: left">
-<!--        <b-card-text>-->
-<!--          지은이 : {{books.createdWho}}-->
-<!--        </b-card-text>-->
-<!--        <b-card-text>-->
-<!--          출판 : {{books.createdWho}}-->
-<!--        </b-card-text>-->
-<!--          <div style="background-color: red; width: 300px; height: 300px; display: inline-block">-->
-<!--          </div>-->
           <b-row style="display: inline-block;">
               <b-row style="padding-left: 30px;">
                   <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{books.title}}</h1>
@@ -73,25 +65,6 @@
           <div style=" text-align: right">
               <img style="padding-left: 20px; height: 30px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_button.png">
           </div>
-<!--        <b-card-text class="b-card-text">-->
-<!--          (글, 그림 외) : {{books.createdWho}}-->
-<!--        </b-card-text>-->
-<!--          <b-card-text class="b-card-text">-->
-<!--          (발행번호) : {{books.isbn}}-->
-<!--        </b-card-text>-->
-<!--          <b-card-text class="b-card-text">-->
-<!--          (페이지수) : {{books.pages}}, (제본) {{books.bookBinding}}-->
-<!--        </b-card-text>-->
-<!--          <b-card-text class="b-card-text">-->
-<!--          (책사이즈) : {{books.width}}cm*{{books.height}}cm*{{books.depth}}cm-->
-<!--        </b-card-text>-->
-<!--          <b-card-text class="b-card-text">-->
-<!--          (발행년월일) {{ $moment(books.createdDate).format('YYYY년MM월DD일') }} (발간정보) {{books.edition}} {{books.editionNumber}}쇄 {{books.price}}원-->
-<!--        </b-card-text>-->
-<!--          <b-card-text class="b-card-text">-->
-<!--          (제작) {{books.publishingHouse}} (가격) {{books.price}}원 <img v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_img.png" style="height: 20px; margin-left: 10px;">-->
-<!--        </b-card-text>-->
-
       </b-col>
     </b-row>
 <!--    <hr style="border: 1px solid black">-->
