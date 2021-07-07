@@ -9,7 +9,7 @@
               controls
               indicators
               background="#abcdef"
-              style="text-shadow: 1px 1px 2px #333;"
+              style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
               @sliding-start="onSlideStart"
               @sliding-end="onSlideEnd"
 
@@ -24,6 +24,7 @@
               <div>
                 <h4>제목 : <strong>{{ item.title }}</strong></h4>
                 <h4>작가 : <strong>{{item.createdWho}}</strong></h4>
+<!--                <h4>작가 : <strong>{{item.imagesDescription}}</strong></h4>-->
               </div>
             </b-carousel-slide>
 

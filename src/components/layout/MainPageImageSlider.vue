@@ -62,7 +62,7 @@
             background="#abcdef"
             img-width="1024"
             img-height="480"
-            style="text-shadow: 1px 1px 2px #333;"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
     >
@@ -86,7 +86,7 @@
             background="#abcdef"
             img-width="1024"
             img-height="480"
-            style="text-shadow: 1px 1px 2px #333;"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
     >
@@ -110,7 +110,7 @@
             background="#abcdef"
             img-width="1024"
             img-height="480"
-            style="text-shadow: 1px 1px 2px #333;"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
     >

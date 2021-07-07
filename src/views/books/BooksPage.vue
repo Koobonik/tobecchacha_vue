@@ -10,7 +10,7 @@
               controls
               indicators
               background="#abcdef"
-              style="text-shadow: 1px 1px 2px #333;"
+              style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
               @sliding-start="onSlideStart"
               @sliding-end="onSlideEnd"
           >
@@ -21,10 +21,10 @@
             >
 <!--              <div style="" class="info" v-if="shown">-->
               <div class="info">
-                <h4>{{ item.id }}</h4>
-                <h4>{{ item.title }}</h4>
-                <h3>{{ item.createdWho }}</h3>
-                <h4>{{ item.price }}원</h4>
+<!--                <h4>{{ item.id }}</h4>-->
+<!--                <h4>{{ item.title }}</h4>-->
+<!--                <h3>{{ item.createdWho }}</h3>-->
+<!--                <h4>{{ item.price }}원</h4>-->
               </div>
             </b-carousel-slide>
 
