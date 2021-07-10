@@ -14,41 +14,48 @@
         @sliding-end="onSlideEnd"
     >
       <!-- Text slides with image -->
+<!--      <b-carousel-slide-->
+<!--          caption="First slide"-->
+<!--          text="Nulla vitae elit libero, a pharetra augue mollis interdum."-->
+<!--          img-src="https://picsum.photos/1024/480/?image=52"-->
+<!--      ></b-carousel-slide>-->
+
+
+<!--      &lt;!&ndash; Slides with custom text &ndash;&gt;-->
+<!--      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">-->
+<!--        <h1>Hello world!</h1>-->
+<!--      </b-carousel-slide>-->
+
+<!--      &lt;!&ndash; Slides with image only &ndash;&gt;-->
+<!--      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>-->
+
+<!--      &lt;!&ndash; Slides with img slot &ndash;&gt;-->
+<!--      &lt;!&ndash; Note the classes .d-block and .img-fluid to prevent browser default image alignment &ndash;&gt;-->
+<!--      <b-carousel-slide>-->
+<!--        <template #img>-->
+<!--          <img-->
+<!--              class="d-block img-fluid w-100"-->
+<!--              width="1024"-->
+<!--              height="480"-->
+<!--              src="https://picsum.photos/1024/480/?image=55"-->
+<!--              alt="image slot"-->
+<!--          >-->
+<!--        </template>-->
+<!--      </b-carousel-slide>-->
+
+<!--      &lt;!&ndash; Slide with blank fluid image to maintain slide aspect ratio &ndash;&gt;-->
+<!--      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">-->
+<!--        <p>-->
+<!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt-->
+<!--          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.-->
+<!--        </p>-->
+<!--      </b-carousel-slide>-->
       <b-carousel-slide
-          caption="First slide"
-          text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-          img-src="https://picsum.photos/1024/480/?image=52"
-      ></b-carousel-slide>
-
-
-      <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
-      </b-carousel-slide>
-
-      <!-- Slides with image only -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
-
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide>
-        <template #img>
-          <img
-              class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
-              src="https://picsum.photos/1024/480/?image=55"
-              alt="image slot"
-          >
-        </template>
-      </b-carousel-slide>
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
-        </p>
+              v-for="(notice, j) in mainNotice"
+              :key="j"
+              v-bind:img-src="notice.image"
+      >
+<!--        <div style="height: 1000px;" v-on:click="bookDetailPage(notice.id)"></div>-->
       </b-carousel-slide>
     </b-carousel>
 
@@ -140,6 +147,7 @@
   import * as booksApi from "../../api/books";
   import * as educationApi from "../../api/education";
   import * as galleryApi from "../../api/gallery";
+  import * as mainNoticeApi from "../../api/mainNotice";
   import router from "../../router";
 export default {
   name: "MainPageImageSlider",
@@ -187,6 +195,11 @@ export default {
         'imagesDescription',
         'shown'
       ],
+      mainNotice: [
+              'id',
+              'description',
+              'image',
+      ]
     }
   },
   methods: {
@@ -254,12 +267,21 @@ export default {
     },
     galleryDetailPage (id) {
       router.push(`/galleryDetail?id=${id}`);
+    },
+    getMainNotice(page, size){
+      mainNoticeApi.getMainNoticePageSize(page, size).then(response => {
+        this.mainNotice = response;
+        console.log(this.mainNotice);
+      }).catch(error => {
+        console.log(error);
+      })
     }
   },
   async created() {
     await this.getBooks(0, 3);
     await this.getEducation(0,3);
     await this.getGallery(0,3);
+    await this.getMainNotice(0, 10);
   },
 }
 </script>
