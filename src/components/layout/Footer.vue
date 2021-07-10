@@ -13,10 +13,9 @@
           <b-dropdown-item disabled>Disabled action</b-dropdown-item>
         </b-dropdown>
     </div>
-    <b-row>
     <div style="width: 100%; background-color: rgb(43,58,65)">
       <div style="display: inline-block;">
-        <div class="footer" style="text-align: start;">
+        <div class="footer">
           <h4 style="color: white; font-weight: 700">문화온도 씨도씨</h4>
           <h6>서울특별시 종로구 청계천로 159 가동 651호  대표 : 이제경</h6>
           <h6>사업자등록번호 : 814-06-01303  통신판매업신고번호 : 2020-서울종로-2309호</h6>
@@ -24,7 +23,6 @@
         </div>
       </div>
     </div>
-    </b-row>
   </div>
 </template>
 <script>
@@ -52,6 +50,7 @@ name: "Footer",
   padding: 30px;
   background-color: rgb(43,58,65);
   width: 100%;
+  text-align: start;
 }
 
 </style>
