@@ -67,10 +67,26 @@
           </div>
       </b-col>
     </b-row>
-<!--    <hr style="border: 1px solid black">-->
-<!--    <b-card-text style="padding-right: 20px; padding-left: 20px; padding-top: 20px">{{books.content}}</b-card-text>-->
-<!--    <br>-->
-<!--    <b-card-text style="padding: 20px">{{books.tableOfContent}}</b-card-text>-->
+
+<!--      <b-carousel-->
+<!--              id="carousel-1"-->
+
+<!--              :interval=false-->
+<!--              controls-->
+<!--              indicators-->
+<!--              background="#abcdef"-->
+<!--              img-width="1024"-->
+<!--              img-height="480"-->
+<!--              style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"-->
+<!--              @sliding-start="onSlideStart"-->
+<!--              @sliding-end="onSlideEnd"-->
+<!--      >-->
+<!--          <div v-for="(item, i) in otherBooks" :key="i">-->
+<!--              <div v-if="i < 4">-->
+<!--asd-->
+<!--              </div>-->
+<!--          </div>-->
+<!--      </b-carousel>-->
   </div>
 
 </template>
@@ -105,8 +121,24 @@ name: "BookDetail",
         'edition':'',
         'editionNumber' : 0,
         'createdDate':'',
-
-      }
+      },
+      otherBooks: [
+          'id',
+          'price',
+          'title',
+          'content',
+          'createdWho',
+          'images',
+          'width',
+          'height',
+          'depth',
+          'publishingHouse',
+          'ISBN',
+          'pages',
+          'tableOfContent',
+          'nPayLink',
+          'shown'
+      ]
     }
   },
   methods: {
@@ -119,6 +151,20 @@ name: "BookDetail",
       this.sliding = false;
       this.slide = slide;
     },
+      getBooks(page, size){
+          booksApi.getBooksPageSize(page, size).then(response => {
+
+              this.otherBooks = response;
+              console.log(this.otherBooks);
+              for(var i = 0; i < this.otherBooks.length; i++){
+                  this.otherBooks[i].shown = false;
+              }
+
+              console.log(this.otherBooks);
+          }).catch(error => {
+              console.log(error);
+          });
+      },
     getBookDetail(id){
       console.log(`${id}`);
       booksApi.getBookDetail(id).then(response => {
@@ -138,6 +184,7 @@ name: "BookDetail",
   },
   async created() {
     await this.getBookDetail(this.$route.query.id);
+    await this.getBooks(0,12);
 
   }
 }
