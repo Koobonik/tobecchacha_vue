@@ -67,26 +67,22 @@
           </div>
       </b-col>
     </b-row>
-
-<!--      <b-carousel-->
-<!--              id="carousel-1"-->
-
-<!--              :interval=false-->
-<!--              controls-->
-<!--              indicators-->
-<!--              background="#abcdef"-->
-<!--              img-width="1024"-->
-<!--              img-height="480"-->
-<!--              style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"-->
-<!--              @sliding-start="onSlideStart"-->
-<!--              @sliding-end="onSlideEnd"-->
-<!--      >-->
-<!--          <div v-for="(item, i) in otherBooks" :key="i">-->
-<!--              <div v-if="i < 4">-->
-<!--asd-->
-<!--              </div>-->
-<!--          </div>-->
-<!--      </b-carousel>-->
+      <b-container class="bv-example-row">
+      <b-row>
+          <b-col style="height: 45%; width: 45%; padding: 30px;text-align: center;" lg="6" v-for="(item, i) in otherBooks" :key="i">
+              <div v-if="i < 4" >
+                  <img class="customImage" v-bind:src="item.images[0]">
+                  <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
+                  <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}} 지음</div>
+              </div>
+          </b-col>
+      </b-row>
+      </b-container>
+      <div v-for="(item, i) in otherBooks" :key="i">
+          <div v-if="i < 4">
+              vdfvdf
+          </div>
+      </div>
   </div>
 
 </template>
@@ -190,10 +186,18 @@ name: "BookDetail",
 }
 </script>
 
-<style scoped>
+<style>
     .b-card-text {
         font-size: 13px;
         line-height: 5px;
         color: rgb(116, 114, 110);
     }
+    .customImage {
+        width: 100%;
+        outline: black;
+        background-size: 100%, 100%; border: 1px solid black; background-image: none;
+        object-fit: cover!important;
+    }
+    /*.carousel-control-prev-icon {*/
+    /*}*/
 </style>
