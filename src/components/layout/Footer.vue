@@ -30,10 +30,10 @@ export default {
 name: "Footer",
   methods: {
     instagram(){
-      window.open("https://instagram.com", '_blank').focus();
+      window.open("https://www.instagram.com/see_dosee", '_blank').focus();
     },
     facebook(){
-      window.open("https://facebook.com", '_blank').focus();
+      window.open("https://www.facebook.com/seedosee0608", '_blank').focus();
     },
     kakao(){
       window.open("https://kakao.com", '_blank').focus();
