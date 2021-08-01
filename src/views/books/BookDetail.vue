@@ -31,7 +31,7 @@
               <b-row style="padding-left: 30px;">
                   <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{books.title}}</h1>
                   <div style="width: 20px"></div>
-                  <h6 style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{books.subTitle}}</h6>
+                  <h6  v-html="content" style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{books.subTitle}}</h6>
               </b-row>
           </b-row>
 
@@ -60,7 +60,7 @@
 
           <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">책소개</div>
 
-          <div style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{books.content}}</div>
+          <div v-html="returnContent" style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);"></div>
 
           <div style=" text-align: right">
               <img style="padding-left: 20px; height: 30px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_button.png">
@@ -167,6 +167,7 @@ name: "BookDetail",
 
 
         this.books = response;
+          this.books.content = this.books.content.replace('\n', '<br />');
         console.log("여기를봐");
         console.log(this.books.images);
       }).catch(error => {
@@ -182,6 +183,11 @@ name: "BookDetail",
     await this.getBookDetail(this.$route.query.id);
     await this.getBooks(0,12);
 
+  },
+  computed: {
+    returnContent(){
+        return this.books.content.replaceAll('\\n', "<br/>")
+      }
   }
 }
 </script>

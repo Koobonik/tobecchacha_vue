@@ -47,11 +47,11 @@
 
         <div style="margin-top: 30px;"></div>
         <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">작품소개</div>
-        <div style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{gallery.content}}</div>
+        <div v-html="returnContent" style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{gallery.content}}</div>
 
         <div style="margin-top: 30px;"></div>
         <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">작품설명</div>
-        <div style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{gallery.information}}</div>
+        <div v-html="returnInformation" style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{gallery.information}}</div>
 
         <div v-if="gallery.npayLink != null">
           <div style="margin-top: 30px;"></div>
@@ -151,6 +151,14 @@ name: "GalleryDetail",
   async created() {
     await this.getBookDetail(this.$route.query.id);
 
+  },
+  computed: {
+    returnContent(){
+      return this.gallery.content.replaceAll('\\n', "<br/>")
+    },
+    returnInformation(){
+      return this.gallery.information.replaceAll('\\n', "<br/>")
+    }
   }
 }
 </script>

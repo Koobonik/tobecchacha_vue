@@ -40,7 +40,7 @@
 
         <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">프로그램 개요</div>
 
-        <div style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{education.introduction}}</div>
+        <div v-html="returnContent" style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{education.introduction}}</div>
 
       </b-col>
     </b-row>
@@ -102,6 +102,11 @@ name: "EducationDetail",
   async created() {
     await this.getBookDetail(this.$route.query.id);
 
+  },
+  computed: {
+    returnContent(){
+      return this.education.introduction.replaceAll('\\n', "<br/>")
+    }
   }
 }
 </script>
