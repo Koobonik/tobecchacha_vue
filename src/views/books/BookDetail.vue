@@ -67,21 +67,20 @@
           </div>
       </b-col>
     </b-row>
-      <b-container class="bv-example-row">
-      <b-row>
-          <b-col style="height: 45%; width: 45%; padding: 30px;text-align: center;" lg="6" v-for="(item, i) in otherBooks" :key="i">
-              <div v-if="i < 4" >
-                  <img class="customImage" v-bind:src="item.images[0]">
-                  <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
-                  <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}} 지음</div>
-              </div>
-          </b-col>
-      </b-row>
-      </b-container>
-      <div v-for="(item, i) in otherBooks" :key="i">
-          <div v-if="i < 4">
-              vdfvdf
-          </div>
+      <div>
+<!--          <img style="position: absolute;top: 50%;margin-top: -50px; margin-right: 100%; margin-left: -30%" src="../../assets/icons/back_icon.png">-->
+<!--          src="../../assets/icons/icons8-tuition-90.png-->
+          <b-container class="bv-example-row">
+              <b-row>
+                  <b-col style="height: 45%; width: 45%; padding: 30px;text-align: center;" lg="6" v-for="(item, i) in otherBooks" :key="i">
+                      <div v-if="i < 4" >
+                          <img class="customImage" v-bind:src="item.images[0]">
+                          <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
+                          <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}} 지음</div>
+                      </div>
+                  </b-col>
+              </b-row>
+          </b-container>
       </div>
   </div>
 
@@ -199,11 +198,10 @@ name: "BookDetail",
         color: rgb(116, 114, 110);
     }
     .customImage {
-        width: 100%;
+        width:100%!important ;
+        height: 400px;
         outline: black;
         background-size: 100%, 100%; border: 1px solid black; background-image: none;
         object-fit: cover!important;
     }
-    /*.carousel-control-prev-icon {*/
-    /*}*/
 </style>
