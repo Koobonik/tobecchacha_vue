@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="light" style="background-color: white">
+    <b-navbar toggleable="lg" type="light" style="background-color: rgb(43,58,65);">
       <b-navbar-brand href="/"><img style="height: 40px; align-content: center" alt="Vue logo" src="../../assets/logo_3.png"></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -9,20 +9,20 @@
       <b-collapse id="nav-collapse" is-nav style="align-content: start">
 
 
-        <b-button v-if="$route.path !== '/books'" style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/books">Books</b-button>
-        <b-button v-else style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/books"><strong>Books</strong></b-button>
+        <b-button v-if="$route.path !== '/books'" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/books">Books</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/books"><strong>Books</strong></b-button>
 
-        <b-button v-if="$route.path !== '/education'" style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/education">Education</b-button>
-        <b-button v-else style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/education"><strong>Education</strong></b-button>
+        <b-button v-if="$route.path !== '/education'" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/education">Education</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/education"><strong>Education</strong></b-button>
 
-        <b-button v-if="$route.path !== '/gallery'" style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/gallery">Gallery</b-button>
-        <b-button v-else style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/gallery"><strong>Gallery</strong></b-button>
+        <b-button v-if="$route.path !== '/gallery'" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/gallery">Gallery</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/gallery"><strong>Gallery</strong></b-button>
 
-        <b-button v-if="$route.path !== '/artists'" style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/artists">ETC</b-button>
-        <b-button v-else style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/artists"><strong>ETC</strong></b-button>
+        <b-button v-if="$route.path !== '/artists'" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/artists">ETC</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/artists"><strong>ETC</strong></b-button>
 
-        <b-button v-if="$route.path !== '/login'" style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">Webzine</b-button>
-        <b-button v-else style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login"><strong>Webzine</strong></b-button>
+        <b-button v-if="$route.path !== '/login'" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/login">Webzine</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/login"><strong>Webzine</strong></b-button>
 <!--        <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">{{ $route.path }}</b-button>-->
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->
 <!--          <b-dropdown-item href="#">단체소개</b-dropdown-item>-->
