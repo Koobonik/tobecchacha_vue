@@ -2,10 +2,7 @@
   <div v-on:click="helloWorld">
     <b-carousel
         id="carousel-1"
-
         :interval=false
-        controls
-        indicators
         background="#abcdef"
         img-width="1024"
         img-height="480"
@@ -50,12 +47,20 @@
 <!--          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.-->
 <!--        </p>-->
 <!--      </b-carousel-slide>-->
-      <b-carousel-slide
-              v-for="(notice, j) in mainNotice"
-              :key="j"
-              v-bind:img-src="notice.image"
-      >
-<!--        <div style="height: 1000px;" v-on:click="bookDetailPage(notice.id)"></div>-->
+
+<!--      <b-carousel-slide-->
+<!--              v-for="(notice, j) in mainNotice"-->
+<!--              :key="j"-->
+<!--              v-bind:img-src="notice.image"-->
+<!--      >-->
+<!--      </b-carousel-slide>-->
+      <b-carousel-slide img-src="https://seedosee.com:8082/api/file/downloadFile/07dc7e62-8153-47ab-bb0e-17e886f9a405main_page_image.jpg">
+        <div>
+          <div style="width: 100%; height: 100px; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>
+          <div style="width: 100%; height: 100px; align-content: center; text-align: right; color: black">
+            출ㅁㄴㅇ판<br>전시<br>교육<br>문화기획
+          </div>
+        </div>
       </b-carousel-slide>
     </b-carousel>
 
