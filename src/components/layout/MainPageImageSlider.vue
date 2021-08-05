@@ -1,15 +1,28 @@
 <template>
   <div v-on:click="helloWorld">
-    <b-carousel
-        id="carousel-1"
-        :interval=false
-        background="#abcdef"
-        img-width="1024"
-        img-height="480"
-        style="text-shadow: 1px 1px 2px #333;"
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-    >
+    <div class="image">
+      <img style="width: 100%; height: 250px;" src="https://seedosee.com:8082/api/file/downloadFile/c90f39f7-0909-4748-873f-dd5a71c82405main_rating_image.jpeg" alt="사막">
+      <div class="text">
+          <div style="width: 100%; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>
+            <div style="width:100%;height: 100px; text-align: start; color: black;">
+              0도에서 100도<br>
+              액화되고 기화되는 문화의 온도<br>
+              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
+            </div>
+
+      </div>
+    </div>
+
+<!--    <b-carousel-->
+<!--        id="carousel-1"-->
+<!--        :interval=false-->
+<!--        background="#abcdef"-->
+<!--        img-width="1024"-->
+<!--        img-height="480"-->
+<!--        style="font-weight: bold"-->
+<!--        @sliding-start="onSlideStart"-->
+<!--        @sliding-end="onSlideEnd"-->
+<!--    >-->
       <!-- Text slides with image -->
 <!--      <b-carousel-slide-->
 <!--          caption="First slide"-->
@@ -54,18 +67,25 @@
 <!--              v-bind:img-src="notice.image"-->
 <!--      >-->
 <!--      </b-carousel-slide>-->
-      <b-carousel-slide img-src="https://seedosee.com:8082/api/file/downloadFile/07dc7e62-8153-47ab-bb0e-17e886f9a405main_page_image.jpg">
-        <div>
-          <div style="width: 100%; height: 100px; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>
-          <div style="width: 100%; height: 100px; align-content: center; text-align: right; color: black">
-            출ㅁㄴㅇ판<br>전시<br>교육<br>문화기획
-          </div>
-        </div>
-      </b-carousel-slide>
-    </b-carousel>
+<!--      <img style="width: 100%" src="https://seedosee.com:8082/api/file/downloadFile/c90f39f7-0909-4748-873f-dd5a71c82405main_rating_image.jpeg">-->
+<!--      <b-carousel-slide img-src="https://seedosee.com:8082/api/file/downloadFile/c90f39f7-0909-4748-873f-dd5a71c82405main_rating_image.jpeg">-->
+<!--        <div>-->
+<!--          <div style="width: 100%; height: 100px; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>-->
+<!--          <div style="float: right">-->
+<!--          <div style="height: 100px; align-content: end; text-align: start; color: black">-->
+<!--            0도에서 100도<br>-->
+<!--            액화되고 기화되는 문화의 온도<br>-->
+<!--            <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--      </b-carousel-slide>-->
+<!--    </b-carousel>-->
 
-    <div style="padding-top: 40px;"></div>
-    <b-card-text style="text-align: start; margin-left: 20px"><img style="height: 40px" alt="Vue logo" src="../../assets/icons/icons8-read-100.png"> Books</b-card-text>
+    <div style="padding-top: 30px;"></div>
+    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Books</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{bookTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{bookSubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -74,8 +94,8 @@
             background="#abcdef"
             img-width="1024"
             img-height="480"
-            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
-            @sliding-start="onSlideStart"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 10px; margin-right: 10px"
+            @sliding-start="onSlideStartBook"
             @sliding-end="onSlideEnd"
     >
       <!-- Text slides with image -->
@@ -89,7 +109,9 @@
     </b-carousel>
 
     <div style="padding-top: 40px;"></div>
-    <b-card-text style="text-align: start; margin-left: 20px"><img style="height: 40px" alt="Vue logo" src="../../assets/icons/icons8-tuition-90.png"> Education</b-card-text>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Education</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{educationTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{educationSubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -99,7 +121,7 @@
             img-width="1024"
             img-height="480"
             style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
-            @sliding-start="onSlideStart"
+            @sliding-start="onSlideStartEducation"
             @sliding-end="onSlideEnd"
     >
       <!-- Text slides with image -->
@@ -144,8 +166,17 @@
 <style>
   .carousel-item img {
     width:100%!important ;
-    height: 400px;
+    height: 250px;
     object-fit: cover!important;
+  }
+  .image {
+    position:relative;
+  }
+
+  .image .text {
+    position:absolute;
+    top:40px;
+    left:80px;
   }
 </style>
 <script>
@@ -204,7 +235,13 @@ export default {
               'id',
               'description',
               'image',
-      ]
+      ],
+      bookTitle:'',
+      bookSubTitle:'',
+      educationTitle:'',
+      educationSubTitle:'',
+      galleryTitle:'',
+      gallerySubTitle:'',
     }
   },
   methods: {
@@ -212,11 +249,24 @@ export default {
     onSlideStart(slide) {
       this.sliding = true;
       this.slide = slide;
+      console.log(this.slide);
     },
     // eslint-disable-next-line no-unused-vars
     onSlideEnd(slide) {
       this.sliding = false;
       this.slide = slide;
+    },
+    onSlideStartBook(slide) {
+      this.sliding = true;
+      this.bookTitle = this.books[slide].title;
+      this.bookSubTitle = this.books[slide].subTitle;
+      console.log(this.slide);
+    },
+    onSlideStartEducation(slide) {
+      this.sliding = true;
+      this.educationTitle = this.education[slide].title;
+      this.educationSubTitle = this.education[slide].subTitle;
+      console.log(this.slide);
     },
     helloWorld(){
       console.log(this.slide);
@@ -229,6 +279,8 @@ export default {
         for(var i = 0; i < this.books.length; i++){
           this.books[i].shown = false;
         }
+        this.bookTitle = this.books[0].title;
+        this.bookSubTitle = this.books[0].subTitle;
 
         console.log(this.books);
       }).catch(error => {
@@ -247,6 +299,8 @@ export default {
         for(var i = 0; i < this.education.length; i++){
           this.education[i].shown = false;
         }
+        this.educationTitle = this.education[0].title;
+        this.educationSubTitle = this.education[0].subTitle;
         console.log(this.education);
       }).catch(error => {
         console.log(error);

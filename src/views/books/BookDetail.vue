@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div style="padding-top: 20px;"></div>
+    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Books</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{books.title}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{books.subTitle}}</div>
     <b-carousel
         id="carousel-1"
 
@@ -9,7 +13,7 @@
         background="#abcdef"
         img-width="1024"
         img-height="480"
-        style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
+        style="text-shadow: 1px 1px 2px #333;margin-left: 10px; margin-right: 10px"
         @sliding-start="onSlideStart"
         @sliding-end="onSlideEnd"
     >
@@ -24,46 +28,47 @@
 
       <!-- Slides with custom text -->
     </b-carousel>
-    <br>
-    <b-row style="margin: 20px;">
+    <b-row style="margin-left: 10px; margin-right: 10px;">
       <b-col style="text-align: left">
           <b-row style="display: inline-block;">
               <b-row style="padding-left: 30px;">
-                  <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{books.title}}</h1>
+<!--                  <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{books.title}}</h1>-->
                   <div style="width: 20px"></div>
                   <h6  v-html="content" style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{books.subTitle}}</h6>
               </b-row>
           </b-row>
 
-        <b-card-text style="font-size: 13px; font-weight: bold; font-family: 'Yu Gothic'; color: rgb(116, 114, 110)">
-            {{books.createdWho}} 지음 | {{books.publishingHouse}} | {{ $moment(books.createdDate).format('YYYY년 MM월 DD일') }} 출간
+        <b-card-text style="font-size: 16px; font-weight: bold; font-family: 'Yu Gothic'; color: rgb(116, 114, 110)">
+            {{books.createdWho}} 지음 | {{books.publishingHouse}} | {{ $moment(books.createdDate).format('YYYY년 MM월 DD일') }} 출간<br>
+          ISBN {{books.isbn}} / {{books.pages}}쪽 / {{books.width}} x {{books.height}}cm<br>
+          가격 {{books.price}}원
         </b-card-text>
-          <b-row>
-              <div style="width: 70px;">
-                  <b-col>
-                      <p class="b-card-text">ISBN</p>
-                      <p class="b-card-text">쪽수</p>
-                      <p class="b-card-text">크기</p>
-                      <p class="b-card-text">가격</p>
-                  </b-col>
-              </div>
+<!--          <b-row>-->
+<!--              <div style="width: 70px;">-->
+<!--                  <b-col>-->
+<!--                      <p class="b-card-text">ISBN</p>-->
+<!--                      <p class="b-card-text">쪽수</p>-->
+<!--                      <p class="b-card-text">크기</p>-->
+<!--                      <p class="b-card-text">가격</p>-->
+<!--                  </b-col>-->
+<!--              </div>-->
 
-              <div>
-                  <b-col>
-                      <p class="b-card-text">{{books.isbn}}</p>
-                      <p class="b-card-text">{{books.pages}}쪽</p>
-                      <p class="b-card-text">{{books.width}}mm * {{books.height}}mm * {{books.depth}}mm / {{books.weight}}g</p>
-                      <p class="b-card-text">{{books.price}}원</p>
-                  </b-col>
-              </div>
-          </b-row>
+<!--              <div>-->
+<!--                  <b-col>원-->
+<!--                      <p class="b-card-text">{{books.isbn}}</p>-->
+<!--                      <p class="b-card-text">{{books.pages}}쪽</p>-->
+<!--                      <p class="b-card-text">{{books.width}}mm * {{books.height}}mm * {{books.depth}}mm / {{books.weight}}g</p>-->
+<!--                      <p class="b-card-text">{{books.price}}원</p>-->
+<!--                  </b-col>-->
+<!--              </div>-->
+<!--          </b-row>-->
 
-          <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">책소개</div>
+<!--          <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">책소개</div>-->
 
-          <div v-html="returnContent" style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);"></div>
+          <div v-html="returnContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
 
           <div style=" text-align: right">
-              <img style="padding-left: 20px; height: 30px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_button.png">
+              <img style="padding-left: 20px; height: 30px; margin-bottom: 40px" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_button.png">
           </div>
       </b-col>
     </b-row>
@@ -71,8 +76,8 @@
 <!--          <img style="position: absolute;top: 50%;margin-top: -50px; margin-right: 100%; margin-left: -30%" src="../../assets/icons/back_icon.png">-->
 <!--          src="../../assets/icons/icons8-tuition-90.png-->
           <b-container class="bv-example-row">
-              <b-row>
-                  <b-col style="height: 45%; width: 45%; padding: 30px;text-align: center;" lg="6" v-for="(item, i) in otherBooks" :key="i">
+              <b-row style="padding-left: 20px; padding-right: 20px">
+                  <b-col style="height: 40%; width: 50%; padding-right: 10px; padding-left: 10px;padding-bottom: 20px;text-align: center;" lg="6" v-for="(item, i) in otherBooks" :key="i">
                       <div v-if="i < 4" >
                           <img class="customImage" v-bind:src="item.images[0]">
                           <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
@@ -199,7 +204,7 @@ name: "BookDetail",
     }
     .customImage {
         width:100%!important ;
-        height: 400px;
+        height: 150px;
         outline: black;
         background-size: 100%, 100%; border: 1px solid black; background-image: none;
         object-fit: cover!important;
