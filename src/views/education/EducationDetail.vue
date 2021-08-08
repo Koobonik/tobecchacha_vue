@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div style="padding-top: 20px;"></div>
+    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Education</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{education.title}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{education.subTitle}}</div>
     <b-carousel
         id="carousel-1"
 
@@ -9,7 +13,7 @@
         background="#abcdef"
         img-width="1024"
         img-height="480"
-        style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
+        style="text-shadow: 1px 1px 2px #333;margin-left: 10px; margin-right: 10px"
         @sliding-start="onSlideStart"
         @sliding-end="onSlideEnd"
     >
@@ -24,26 +28,31 @@
 
       <!-- Slides with custom text -->
     </b-carousel>
-    <br>
 
-    <b-row style="margin: 20px;">
+    <b-row style="margin: 10px;">
       <b-col style="text-align: left">
-        <b-row style="display: inline-block;">
-          <b-row style="padding-left: 30px;">
-            <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{education.title}}</h1>
-            <div style="width: 20px"></div>
-            <h6 style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{education.subTitle}}</h6>
-          </b-row>
-        </b-row>
 
 
-
-        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">프로그램 개요</div>
-
-        <div v-html="returnContent" style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{education.introduction}}</div>
+<!--        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">프로그램 개요</div>-->
+        <div v-html="returnContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
 
       </b-col>
     </b-row>
+    <div>
+      <!--          <img style="position: absolute;top: 50%;margin-top: -50px; margin-right: 100%; margin-left: -30%" src="../../assets/icons/back_icon.png">-->
+      <!--          src="../../assets/icons/icons8-tuition-90.png-->
+      <b-container class="bv-example-row">
+        <b-row style="padding-left: 20px; padding-right: 20px; margin-top: 40px;">
+          <b-col style="height: 40%; width: 50%; padding-right: 10px; padding-left: 10px;padding-bottom: 20px;text-align: center;" lg="6" v-for="(item, i) in otherEducation" :key="i">
+            <div v-if="i < 4" >
+              <img class="customImage" v-bind:src="item.images[0]">
+              <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
+              <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">with {{item.withWho}}</div>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
 
 <!--    <hr style="border: 1px solid black">-->
 
@@ -69,7 +78,17 @@ name: "EducationDetail",
         'withWho': '',
         'images': [],
         'introduction' : '',
-      }
+      },
+      otherEducation : [
+        'id',
+        'price',
+        'title',
+        'subTitle',
+        'content',
+        'withWho',
+        'images',
+        'introduction',
+      ]
     }
   },
   methods: {
@@ -81,6 +100,13 @@ name: "EducationDetail",
     onSlideEnd(slide) {
       this.sliding = false;
       this.slide = slide;
+    },
+    getEducation(page, size){
+      educationApi.getEducationPageSize(page, size).then(response => {
+        this.otherEducation = response;
+      }).catch(error => {
+        console.log(error);
+      })
     },
     getBookDetail(id){
       console.log(`${id}`);
@@ -101,6 +127,7 @@ name: "EducationDetail",
   },
   async created() {
     await this.getBookDetail(this.$route.query.id);
+    await this.getEducation(0,4);
 
   },
   computed: {

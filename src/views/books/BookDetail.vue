@@ -17,28 +17,24 @@
         @sliding-start="onSlideStart"
         @sliding-end="onSlideEnd"
     >
-      <!-- Text slides with image -->
       <b-carousel-slide
           v-for="(image, j) in books.images"
           :key="j"
           v-bind:img-src="image"
       >
       </b-carousel-slide>
-
-
-      <!-- Slides with custom text -->
     </b-carousel>
     <b-row style="margin-left: 10px; margin-right: 10px;">
       <b-col style="text-align: left">
-          <b-row style="display: inline-block;">
-              <b-row style="padding-left: 30px;">
-<!--                  <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{books.title}}</h1>-->
-                  <div style="width: 20px"></div>
-                  <h6  v-html="content" style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{books.subTitle}}</h6>
-              </b-row>
-          </b-row>
+<!--          <b-row style="display: inline-block;">-->
+<!--              <b-row style="padding-left: 30px;">-->
+<!--&lt;!&ndash;                  <h1 style="font-size: 22px; font-weight: bold; font-family: 'Yu Gothic'">{{books.title}}</h1>&ndash;&gt;-->
+<!--                  <div style="width: 20px"></div>-->
+<!--                  <h6  v-html="content" style="font-size: 15px; font-family: 'Yu Gothic'; line-height: 22px">{{books.subTitle}}</h6>-->
+<!--              </b-row>-->
+<!--          </b-row>-->
 
-        <b-card-text style="font-size: 16px; font-weight: bold; font-family: 'Yu Gothic'; color: rgb(116, 114, 110)">
+        <b-card-text style="margin-top: 20px; font-size: 16px; font-weight: bold; font-family: 'Yu Gothic'; color: rgb(116, 114, 110)">
             {{books.createdWho}} 지음 | {{books.publishingHouse}} | {{ $moment(books.createdDate).format('YYYY년 MM월 DD일') }} 출간<br>
           ISBN {{books.isbn}} / {{books.pages}}쪽 / {{books.width}} x {{books.height}}cm<br>
           가격 {{books.price}}원
@@ -153,14 +149,7 @@ name: "BookDetail",
     },
       getBooks(page, size){
           booksApi.getBooksPageSize(page, size).then(response => {
-
               this.otherBooks = response;
-              console.log(this.otherBooks);
-              for(var i = 0; i < this.otherBooks.length; i++){
-                  this.otherBooks[i].shown = false;
-              }
-
-              console.log(this.otherBooks);
           }).catch(error => {
               console.log(error);
           });

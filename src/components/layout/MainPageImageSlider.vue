@@ -135,7 +135,9 @@
     </b-carousel>
 
     <div style="padding-top: 40px;"></div>
-    <b-card-text style="text-align: start; margin-left: 20px"><img style="height: 40px" alt="Vue logo" src="../../assets/icons/icons8-photo-gallery-96.png"> Gallery</b-card-text>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Education</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{galleryTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{gallerySubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -145,7 +147,7 @@
             img-width="1024"
             img-height="480"
             style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
-            @sliding-start="onSlideStart"
+            @sliding-start="onSlideStartGallery"
             @sliding-end="onSlideEnd"
     >
       <!-- Text slides with image -->
@@ -260,13 +262,16 @@ export default {
       this.sliding = true;
       this.bookTitle = this.books[slide].title;
       this.bookSubTitle = this.books[slide].subTitle;
-      console.log(this.slide);
     },
     onSlideStartEducation(slide) {
       this.sliding = true;
       this.educationTitle = this.education[slide].title;
       this.educationSubTitle = this.education[slide].subTitle;
-      console.log(this.slide);
+    },
+    onSlideStartGallery(slide) {
+      this.sliding = true;
+      this.galleryTitle = this.gallery[slide].title;
+      this.gallerySubTitle = this.gallery[slide].subTitle;
     },
     helloWorld(){
       console.log(this.slide);
@@ -318,7 +323,8 @@ export default {
         for(var i = 0; i < this.gallery.length; i++){
           this.gallery[i].shown = false;
         }
-
+        this.galleryTitle = this.gallery[0].title;
+        this.gallerySubTitle = this.gallery[0].subTitle;
         console.log(this.gallery);
       }).catch(error => {
         console.log(error);
