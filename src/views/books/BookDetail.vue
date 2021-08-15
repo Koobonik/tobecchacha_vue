@@ -83,6 +83,19 @@
               </b-row>
           </b-container>
       </div>
+      <b-container class="bv-example-row">
+          <b-pagination
+                  v-model="currentPage"
+                  v-bind:total-rows="this.otherBooks.length"
+                  :per-page="4"
+                  first-text="⏮"
+                  prev-text="⏪"
+                  next-text="⏩"
+                  last-text="⏭"
+                  class="mt-4"
+                  style="background-color: black;text-align: center; alignment: center; align-content: center; alignment-baseline: center; position: center"
+          ></b-pagination>
+      </b-container>
   </div>
 
 </template>
@@ -96,6 +109,7 @@ name: "BookDetail",
     return {
       slide: 0,
       sliding: null,
+      currentPage: 1,
       books: {
         'id': 0,
         'price' : 0,
@@ -174,7 +188,7 @@ name: "BookDetail",
   },
   async created() {
     await this.getBookDetail(this.$route.query.id);
-    await this.getBooks(0,12);
+    await this.getBooks(0,120);
 
   },
   computed: {
