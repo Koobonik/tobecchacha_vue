@@ -9,19 +9,19 @@
       <b-collapse id="nav-collapse" is-nav style="align-content: start">
 
 
-        <b-button v-if="!$route.path.includes('/book',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/books">Books</b-button>
-        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/books"><strong>Books</strong></b-button>
+        <b-button v-if="!$route.path.includes('/book',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`bookDetail?id=`+bookId">Books</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`bookDetail?id=`+bookId"><strong>Books</strong></b-button>
 
-        <b-button v-if="!$route.path.includes('/education',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/education">Education</b-button>
-        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/education"><strong>Education</strong></b-button>
+        <b-button v-if="!$route.path.includes('/education',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`educationDetail?id=`+educationId">Education</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`educationDetail?id=`+educationId"><strong>Education</strong></b-button>
 
-        <b-button v-if="!$route.path.includes('/gallery',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/gallery">Gallery</b-button>
-        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/gallery"><strong>Gallery</strong></b-button>
+        <b-button v-if="!$route.path.includes('/gallery',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`galleryDetail?id=`+galleryId">Gallery</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`galleryDetail?id=`+galleryId"><strong>Gallery</strong></b-button>
 
         <b-button v-if="!$route.path.includes('/etc',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/etc">ETC</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/etc"><strong>ETC</strong></b-button>
 
-        <b-button v-if="$route.path !== '/webzine'" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/webzine">Webzine</b-button>
+        <b-button v-if="!$route.path.includes('/webzine',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/webzine">Webzine</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/webzine"><strong>Webzine</strong></b-button>
 <!--        <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">{{ $route.path }}</b-button>-->
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->
@@ -105,6 +105,7 @@
 <script>
 import * as user from "@/api/user";
 import * as auth from "@/api/auth";
+import * as noticeApi from "@/api/mainNotice";
 import router from "@/router";
 
 export default {
@@ -115,11 +116,11 @@ export default {
       navColor: "primary",
       isLogin: false,
       userNickname: "",
-      bookID: 0,
-      educationID: 0,
-      galleryID: 0,
-      etcID: 0,
-      webzineID: 0,
+      bookId: 0,
+      educationId: 0,
+      galleryId: 0,
+      etcId: 0,
+      webzineId: 0,
 
 
     }
@@ -131,6 +132,14 @@ export default {
     goto(){
       console.log("asd");
       router.push("/");
+    },
+    async getCurrentIds(){
+      noticeApi.getCurrentIds().then(response => {
+        this.bookId = response.bookId
+        this.educationId = response.educationId
+        this.galleryId = response.galleryId
+        console.log(this)
+      })
     }
  // name: "header"
 
@@ -162,6 +171,8 @@ export default {
       this.isLogin = false;
       this.userNickname = "로그인하기";
     }
+    this.getCurrentIds();
+
   },
   beforeMount() {
   },

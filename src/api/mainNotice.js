@@ -18,3 +18,13 @@ export async function getMainNoticeDetail(id){
         return null;
     })
 }
+export async function getCurrentIds(){
+    return http.get(`/api/v1/mainNotice/getCurrentIds`).then(response => {
+        console.log(response.data);
+        return response.data;
+    }).catch(error => {
+        console.log(error);
+        return null;
+    })
+}
+
