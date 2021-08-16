@@ -83,19 +83,10 @@
               </b-row>
           </b-container>
       </div>
-      <b-container class="bv-example-row">
-          <b-pagination
-                  v-model="currentPage"
-                  v-bind:total-rows="this.otherBooks.length"
-                  :per-page="4"
-                  first-text="⏮"
-                  prev-text="⏪"
-                  next-text="⏩"
-                  last-text="⏭"
-                  class="mt-4"
-                  style="background-color: black;text-align: center; alignment: center; align-content: center; alignment-baseline: center; position: center"
-          ></b-pagination>
-      </b-container>
+    <div class="mt-3">
+      <h6 class="text-center">Center alignment</h6>
+      <b-pagination v-model="currentPage" :total-rows="rows" align="center"></b-pagination>
+    </div>
   </div>
 
 </template>
@@ -161,7 +152,11 @@ name: "BookDetail",
       this.sliding = false;
       this.slide = slide;
     },
-      getBooks(page, size){
+    linkGen(pageNum) {
+      console.log(`${pageNum}`);
+    },
+
+    getBooks(page, size){
           booksApi.getBooksPageSize(page, size).then(response => {
               this.otherBooks = response;
           }).catch(error => {
