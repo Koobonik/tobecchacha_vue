@@ -84,8 +84,14 @@
           </b-container>
       </div>
     <div class="mt-3">
-      <h6 class="text-center">Center alignment</h6>
-      <b-pagination v-model="currentPage" :total-rows="rows" align="center"></b-pagination>
+      <b-pagination
+          :v-model="currentPage"
+          :total-rows="100"
+          :per-page="4"
+          :aria-label="linkGen"
+          align="center">
+
+      </b-pagination>
     </div>
   </div>
 
@@ -152,8 +158,9 @@ name: "BookDetail",
       this.sliding = false;
       this.slide = slide;
     },
-    linkGen(pageNum) {
-      console.log(`${pageNum}`);
+    // helloworld
+    linkGen(page) {
+      console.log(`${page}`);
     },
 
     getBooks(page, size){
