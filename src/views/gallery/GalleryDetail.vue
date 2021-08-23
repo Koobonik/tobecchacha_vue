@@ -68,7 +68,7 @@
     <b-container class="bv-example-row">
       <b-row style="padding-left: 20px; padding-right: 20px; margin-top: 40px;">
         <b-col style="height: 40%; width: 50%; padding-right: 10px; padding-left: 10px;padding-bottom: 20px;text-align: center;" lg="6" v-for="(item, i) in otherGalley" :key="i">
-          <div v-if="i < 4" >
+          <div v-if="i < 4" v-on:click="getGalleyDetail(item.id)" >
             <img class="customImage" v-bind:src="item.images[0]">
             <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
             <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}}</div>
@@ -76,6 +76,17 @@
         </b-col>
       </b-row>
     </b-container>
+    <div class="mt-3">
+
+      <b-pagination
+              :v-model="currentPage"
+              :total-rows=Math.ceil(otherGalleryLength)
+              :per-page="4"
+              @change="pageGen"
+              align="center">
+
+      </b-pagination>
+    </div>
 <!--    <div style="padding: 20px;">-->
 <!--      <p>{{gallery.createdWho}}</p>-->
 
@@ -110,6 +121,8 @@ name: "GalleryDetail",
     return {
       slide: 0,
       sliding: null,
+      currentPage: 1,
+      otherGalleryLength: 0,
       gallery: {
         'id': 0,
         'price' : 0,
@@ -150,13 +163,18 @@ name: "GalleryDetail",
       this.sliding = false;
       this.slide = slide;
     },
-
-    getGallery(page, size){
+    pageGen(page) {
+      console.log(`${page}`);
+      this.getGallery(page-1, 4,false)
+    },
+    getGallery(page, size, isFirst){
       galleryApi.getGalleryPageSize(page, size).then(response => {
-        console.log('허허');
+        console.log(`${page} 이면서 ${size}`);
 
         this.otherGalley = response;
-
+        if(isFirst){
+          this.otherGalleryLength = this.otherGalley.length
+        }
         console.log(this.gallery);
       }).catch(error => {
         console.log(error);
@@ -181,7 +199,7 @@ name: "GalleryDetail",
   },
   async created() {
     await this.getGalleyDetail(this.$route.query.id);
-    await this.getGallery(0,4);
+    await this.getGallery(0,120, true);
 
   },
   computed: {

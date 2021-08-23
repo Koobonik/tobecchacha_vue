@@ -74,7 +74,7 @@
           <b-container class="bv-example-row">
               <b-row style="padding-left: 20px; padding-right: 20px">
                   <b-col style="height: 40%; width: 50%; padding-right: 10px; padding-left: 10px;padding-bottom: 20px;text-align: center;" lg="6" v-for="(item, i) in otherBooks" :key="i">
-                      <div v-if="i < 4" >
+                      <div v-if="i < 4" v-on:click="getBookDetail(item.id)" >
                           <img class="customImage" v-bind:src="item.images[0]">
                           <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
                           <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}} 지음</div>
@@ -84,15 +84,17 @@
           </b-container>
       </div>
     <div class="mt-3">
+
       <b-pagination
           :v-model="currentPage"
-          :total-rows="100"
+          :total-rows=Math.ceil(otherBooksLength)
           :per-page="4"
-          :aria-label="linkGen"
+          @change="pageGen"
           align="center">
 
       </b-pagination>
     </div>
+
   </div>
 
 </template>
@@ -107,6 +109,7 @@ name: "BookDetail",
       slide: 0,
       sliding: null,
       currentPage: 1,
+      otherBooksLength: 0,
       books: {
         'id': 0,
         'price' : 0,
@@ -159,13 +162,17 @@ name: "BookDetail",
       this.slide = slide;
     },
     // helloworld
-    linkGen(page) {
+    pageGen(page) {
       console.log(`${page}`);
+      this.getBooks(page-1, 4,false)
     },
 
-    getBooks(page, size){
+    getBooks(page, size, isFirst){
           booksApi.getBooksPageSize(page, size).then(response => {
               this.otherBooks = response;
+              if(isFirst){
+                  this.otherBooksLength = this.otherBooks.length
+              }
           }).catch(error => {
               console.log(error);
           });
@@ -190,7 +197,7 @@ name: "BookDetail",
   },
   async created() {
     await this.getBookDetail(this.$route.query.id);
-    await this.getBooks(0,120);
+    await this.getBooks(0,120, true);
 
   },
   computed: {
