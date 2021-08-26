@@ -18,8 +18,8 @@
         <b-button v-if="!$route.path.includes('/gallery',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`galleryDetail?id=`+galleryId">Gallery</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`galleryDetail?id=`+galleryId"><strong>Gallery</strong></b-button>
 
-        <b-button v-if="!$route.path.includes('/etc',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/etc">ETC</b-button>
-        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/etc"><strong>ETC</strong></b-button>
+        <b-button v-if="!$route.path.includes('/etc',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`etcDetail?id=`+etcId">ETC</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" v-bind:href="`etcDetail?id=`+etcId"><strong>ETC</strong></b-button>
 
         <b-button v-if="!$route.path.includes('/webzine',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); margin-right: 10px" href="/webzine">Webzine</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); margin-right: 10px" href="/webzine"><strong>Webzine</strong></b-button>
@@ -138,6 +138,7 @@ export default {
         this.bookId = response.bookId
         this.educationId = response.educationId
         this.galleryId = response.galleryId
+        this.etcId = response.etcId
         console.log(this)
       })
     }

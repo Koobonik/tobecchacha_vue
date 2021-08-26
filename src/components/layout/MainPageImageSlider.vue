@@ -136,7 +136,7 @@
     </b-carousel>
 
     <div style="padding-top: 40px;"></div>
-    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Education</b-card-text>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Gallery</b-card-text>
     <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{galleryTitle}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{gallerySubTitle}}</div>
     <b-carousel
@@ -160,6 +160,34 @@
         <div style="height: 1000px;" v-on:click="galleryDetailPage(book.id)"></div>
       </b-carousel-slide>
     </b-carousel>
+
+    <div style="padding-top: 40px;"></div>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{etcTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{etcSubTitle}}</div>
+    <b-carousel
+            id="carousel-1"
+            :interval=false
+            controls
+            indicators
+            background="#abcdef"
+            img-width="1024"
+            img-height="480"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
+            @sliding-start="onSlideStartEtc"
+            @sliding-end="onSlideEnd"
+    >
+      <!-- Text slides with image -->
+      <b-carousel-slide
+              v-for="(etc, j) in etcs"
+              :key="j"
+              v-bind:img-src="etc.images[0]"
+      >
+        <div style="height: 1000px;" v-on:click="getEtcDetailPage(etc.id)"></div>
+      </b-carousel-slide>
+    </b-carousel>
+
+    <div style="padding-top: 40px;"></div>
 <!--    <p class="mt-4">-->
 <!--      Slide #: {{ slide }}<br>-->
 <!--      Sliding: {{ sliding }}-->
@@ -196,6 +224,7 @@
   import * as booksApi from "../../api/books";
   import * as educationApi from "../../api/education";
   import * as galleryApi from "../../api/gallery";
+  import * as etcApi from "../../api/etc";
   import * as mainNoticeApi from "../../api/mainNotice";
   import router from "../../router";
 export default {
@@ -244,6 +273,14 @@ export default {
         'imagesDescription',
         'shown'
       ],
+      etcs: [
+        'id',
+        'title',
+        'subTitle',
+        'informationContent',
+        'content',
+        'images',
+      ],
       mainNotice: [
               'id',
               'description',
@@ -255,6 +292,8 @@ export default {
       educationSubTitle:'',
       galleryTitle:'',
       gallerySubTitle:'',
+      etcTitle:'',
+      etcSubTitle:''
     }
   },
   methods: {
@@ -283,6 +322,11 @@ export default {
       this.sliding = true;
       this.galleryTitle = this.gallery[slide].title;
       this.gallerySubTitle = this.gallery[slide].subTitle;
+    },
+    onSlideStartEtc(slide) {
+      this.sliding = true;
+      this.etcTitle = this.etcs[slide].title;
+      this.etcSubTitle = this.etcs[slide].subTitle;
     },
     helloWorld(){
       console.log(this.slide);
@@ -344,6 +388,20 @@ export default {
     galleryDetailPage (id) {
       router.push(`/galleryDetail?id=${id}`);
     },
+
+    getEtcs(page, size){
+      etcApi.getEtcPageSize(page, size).then(response => {
+        this.etcs = response;
+        this.etcTitle = this.etcs[0].title;
+        this.etcSubTitle = this.etcs[0].subTitle;
+      }).catch(error => {
+        console.log(error);
+      });
+    },
+    getEtcDetailPage(id){
+      router.push(`/etcDetail?id=${id}`);
+    },
+
     getMainNotice(page, size){
       mainNoticeApi.getMainNoticePageSize(page, size).then(response => {
         this.mainNotice = response;
@@ -358,6 +416,7 @@ export default {
     await this.getEducation(0,3);
     await this.getGallery(0,3);
     await this.getMainNotice(0, 10);
+    await this.getEtcs(0,10);
   },
 }
 </script>

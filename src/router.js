@@ -15,6 +15,7 @@ import EducationDetail from "@/views/education/EducationDetail";
 import GalleryPage from "@/views/gallery/GalleryPage";
 import GalleryDetail from "@/views/gallery/GalleryDetail";
 import ArtistsPage from "./views/artists/ArtistsPage";
+import EtcDetail from "./views/etc/EtcDetail";
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: "history",
@@ -78,6 +79,10 @@ const router = new VueRouter({
         {
             path: "/artists",
             component: ArtistsPage
+        },
+        {
+            path: "/etcDetail",
+            component: EtcDetail
         },
     ]
 });
