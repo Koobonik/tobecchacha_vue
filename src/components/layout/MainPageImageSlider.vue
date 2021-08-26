@@ -1,14 +1,15 @@
 <template>
   <div v-on:click="helloWorld">
     <div class="image">
-      <img style="width: 100%; height: 250px;" src="https://seedosee.com:8082/api/file/downloadFile/c90f39f7-0909-4748-873f-dd5a71c82405main_rating_image.jpeg" alt="사막">
+      <img style="width: 100%; height: 250px;" src="../../assets/main_page_image.jpg" alt="사막">
       <div class="text">
           <div style="width: 100%; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>
-            <div style="width:100%;height: 100px; text-align: start; color: black;">
-              0도에서 100도<br>
-              액화되고 기화되는 문화의 온도<br>
-              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
-            </div>
+<!--            <div style="width:100%;height: 100px; text-align: start; color: black;">-->
+<!--              0도에서 100도<br>-->
+<!--              액화되고 기화되는 문화의 온도<br>-->
+<!--              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>-->
+<!--            </div>-->
+          <img class="image2" src="../../assets/seedosee_moto.png">
 
       </div>
     </div>
@@ -178,8 +179,18 @@
   .image .text {
     position:absolute;
     top:40px;
-    left:80px;
+    left:40px;
   }
+    .image2 {
+        width: 300px;
+        /*height: 10px;*/
+        /*left: 1000px;*/
+        top: 80px;
+        left: 140px;
+        /*bottom: 0px;*/
+        position:absolute;
+        align-content: end; text-align: right;
+    }
 </style>
 <script>
   import * as booksApi from "../../api/books";
