@@ -9,7 +9,7 @@
 <!--              액화되고 기화되는 문화의 온도<br>-->
 <!--              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>-->
 <!--            </div>-->
-        <img class="image2" src="../../assets/seedosee_moto.png">
+        <img   class="image2" src="../../assets/seedosee_moto.png">
 
       </div>
     </div>
@@ -201,6 +201,7 @@
     object-fit: cover!important;
   }
   .image {
+    text-align: right;
     position:relative;
   }
 
@@ -210,17 +211,10 @@
     left:40px;
   }
     .image2 {
-
+      margin: 0 auto;
         width: 300px;
-      right: 0px;
-        /*height: 10px;*/
-        /*left: 1000px;*/
-        /*bottom: 0px;*/
-      /*text-align: right;*/
-      /*padding-right: 10px;*/
-      /*bottom: 50px;*/
-      /*right: 50px;*/
-      position: fixed;
+      /*align-content: end;*/
+      /*position: absolute;*/
         /*position:absolute;*/
     }
 </style>
