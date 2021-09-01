@@ -1,9 +1,9 @@
 <template>
   <div>
     <div style="padding-top: 20px;"></div>
-    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Education</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{education.title}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{education.subTitle}}</div>
+    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Education</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{education.title}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{education.subTitle}}</div>
     <b-carousel
         id="carousel-1"
 
@@ -32,7 +32,7 @@
     <b-row style="margin: 10px;">
       <b-col style="text-align: left">
 
-        <div v-html="returnContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: grey;"></div>
+        <div v-html="returnInformation" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: grey;"></div>
 
 <!--        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">프로그램 개요</div>-->
         <div v-html="returnContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
@@ -87,6 +87,7 @@ name: "EducationDetail",
         'id': 0,
         'price' : 0,
         'title' : '',
+        'information' : '',
         'subTitle' : '',
         'content' : '',
         'withWho': '',
@@ -97,6 +98,7 @@ name: "EducationDetail",
         'id',
         'price',
         'title',
+        'information',
         'subTitle',
         'content',
         'withWho',
@@ -154,6 +156,9 @@ name: "EducationDetail",
   computed: {
     returnContent(){
       return this.education.content.replaceAll('\\n', "<br/>")
+    },
+    returnInformation(){
+      return this.education.information.replaceAll('\\n', "<br/>")
     }
 
   }
