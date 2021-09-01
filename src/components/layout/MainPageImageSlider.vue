@@ -1,15 +1,16 @@
 <template>
   <div v-on:click="helloWorld">
     <div class="image">
-      <img style="width: 100%; height: 250px;" src="../../assets/main_page_image.jpg" alt="사막">
+<!--      <img style="width: 100%; height: 250px;" src="../../assets/main_page_image.jpg" alt="사막">-->
+      <img style="width: 100%; height: 250px; object-fit: cover;" src="../../assets/main_image.jpg" alt="사막">
       <div class="text">
-          <div style="width: 100%; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>
+<!--          <div style="width: 100%; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>-->
 <!--            <div style="width:100%;height: 100px; text-align: start; color: black;">-->
 <!--              0도에서 100도<br>-->
 <!--              액화되고 기화되는 문화의 온도<br>-->
 <!--              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>-->
 <!--            </div>-->
-        <img   class="image2" src="../../assets/seedosee_moto.png">
+<!--        <img   class="image2" src="../../assets/seedosee_moto.png">-->
 
       </div>
     </div>
@@ -110,9 +111,9 @@
     </b-carousel>
 
     <div style="padding-top: 40px;"></div>
-    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Education</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{educationTitle}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{educationSubTitle}}</div>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Education</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{educationTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{educationSubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -121,7 +122,7 @@
             background="#abcdef"
             img-width="1024"
             img-height="480"
-            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 10px; margin-right: 10px"
             @sliding-start="onSlideStartEducation"
             @sliding-end="onSlideEnd"
     >
@@ -136,9 +137,9 @@
     </b-carousel>
 
     <div style="padding-top: 40px;"></div>
-    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> Gallery</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{galleryTitle}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{gallerySubTitle}}</div>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Gallery</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{galleryTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{gallerySubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -147,7 +148,7 @@
             background="#abcdef"
             img-width="1024"
             img-height="480"
-            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 10px; margin-right: 10px"
             @sliding-start="onSlideStartGallery"
             @sliding-end="onSlideEnd"
     >
@@ -162,9 +163,9 @@
     </b-carousel>
 
     <div style="padding-top: 40px;"></div>
-    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 28px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 26px; letter-spacing: -2.0px; line-height: 30px">{{etcTitle}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 20px; letter-spacing: -2.0px; color: grey">{{etcSubTitle}}</div>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
+    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{etcTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etcSubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -173,7 +174,7 @@
             background="#abcdef"
             img-width="1024"
             img-height="480"
-            style="text-shadow: 1px 1px 2px #333;margin-left: 20px; margin-right: 20px"
+            style="text-shadow: 1px 1px 2px #333;margin-left: 10px; margin-right: 10px"
             @sliding-start="onSlideStartEtc"
             @sliding-end="onSlideEnd"
     >
