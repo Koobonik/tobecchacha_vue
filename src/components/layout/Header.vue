@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" style="background-color: rgb(43,58,65);">
-      <b-navbar-brand href="/"><img style="height: 40px; align-content: center" alt="Vue logo" src="../../assets/logo_3.png"></b-navbar-brand>
+      <b-navbar-brand href="/"><img style="height: 20px; align-content: center" alt="Vue logo" src="../../assets/logo_3.png"></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

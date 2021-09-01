@@ -35,7 +35,7 @@
 <!--          </b-row>-->
 
         <b-card-text style="margin-top: 20px; font-size: 16px; font-weight: bold; font-family: 'Yu Gothic'; color: rgb(116, 114, 110)">
-            {{books.createdWho}} 지음 | {{books.publishingHouse}} | {{ $moment(books.createdDate).format('YYYY년 MM월 DD일') }} 출간<br>
+            {{books.createdWho}} 지음 | {{books.publishingHouse}}<br>{{ $moment(books.createdDate).format('YYYY년 MM월 DD일') }} 출간<br>
           ISBN {{books.isbn}} / {{books.pages}}쪽 / {{books.width}} x {{books.height}}cm<br>
           가격 {{books.price}}원
         </b-card-text>
@@ -216,9 +216,9 @@ name: "BookDetail",
     }
     .customImage {
         width:100%!important ;
-        height: 150px;
-        outline: black;
-        background-size: 100%, 100%; border: 1px solid black; background-image: none;
+        height: 120px;
+        /*outline: black;*/
+        /*background-size: 100%, 100%; border: 1px solid black; background-image: none;*/
         object-fit: cover!important;
     }
 </style>

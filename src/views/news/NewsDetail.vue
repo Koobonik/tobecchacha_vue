@@ -162,9 +162,9 @@ name: "NewsDetail",
     }
     .customImage {
         width:100%!important ;
-        height: 150px;
-        outline: black;
-        background-size: 100%, 100%; border: 1px solid black; background-image: none;
+        height: 120px;
+        /*outline: black;*/
+        /*background-size: 100%, 100%; border: 1px solid black; background-image: none;*/
         object-fit: cover!important;
     }
 </style>

@@ -152,8 +152,9 @@ name: "EducationDetail",
   },
   computed: {
     returnContent(){
-      return this.education.introduction.replaceAll('\\n', "<br/>")
+      return this.education.content.replaceAll('\\n', "<br/>")
     }
+
   }
 }
 </script>
