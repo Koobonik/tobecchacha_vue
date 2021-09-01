@@ -10,9 +10,9 @@
           <h6>Copyright  ⓒ seedosee.com All rights Reserved</h6>
           <div style="margin: 20px;">
             <img style="height: 50px;" v-on:click="instagram" alt="Vue logo" src="../../assets/icons/insta_icon.png">
-            <img style="padding-left: 20px; height: 50px;" v-on:click="facebook" alt="Vue logo" src="../../assets/icons/facebook_icon.png">
-            <img style="padding-left: 20px; height: 50px;" v-on:click="kakao" alt="Vue logo" src="../../assets/icons/kakao_icon.png">
-            <b-dropdown id="dropdown-1" text="관련사이트" class="m-md-2" style="margin-left: 20px; color: red;">
+            <img style="padding-left: 5px; height: 50px;" v-on:click="facebook" alt="Vue logo" src="../../assets/icons/facebook_icon.png">
+            <img style="padding-left: 5px; height: 50px;" v-on:click="kakao" alt="Vue logo" src="../../assets/icons/kakao_icon.png">
+            <b-dropdown id="dropdown-1" text="관련사이트" class="m-md-2" style="margin-left: 10px; color: red;">
               <b-dropdown-item>First Action</b-dropdown-item>
               <b-dropdown-item>Second Action</b-dropdown-item>
               <b-dropdown-item>Third Action</b-dropdown-item>
