@@ -1,6 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" style="background-color: rgb(43,58,65);">
+    <!-- <b-navbar toggleable="lg" type="light" style="background-color: rgb(43,58,65);height: 50px; align-content: center"> -->
       <b-navbar-brand href="/"><img style="height: 25px; align-content: center" alt="Vue logo" src="../../assets/logo_3.png"></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -18,10 +19,10 @@
         <b-button v-if="!$route.path.includes('/gallery',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`galleryDetail?id=`+galleryId">Gallery</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`galleryDetail?id=`+galleryId"><strong>Gallery</strong></b-button>
 
-        <b-button v-if="!$route.path.includes('/etc',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`etcDetail?id=`+etcId">ETC</b-button>
+        <b-button v-if="!$route.path.includes('/etc',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`etcDetail?id=`+etcId">Etc</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`etcDetail?id=`+etcId"><strong>ETC</strong></b-button>
 
-        <b-button v-if="!$route.path.includes('/news',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`newsDetail?id=`+newsId">NEWS</b-button>
+        <b-button v-if="!$route.path.includes('/news',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`newsDetail?id=`+newsId">News</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`newsDetail?id=`+newsId"><strong>NEWS</strong></b-button>
 <!--        <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">{{ $route.path }}</b-button>-->
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->

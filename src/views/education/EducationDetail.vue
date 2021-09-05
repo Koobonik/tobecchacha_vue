@@ -48,7 +48,7 @@
             <div v-if="i < 4" v-on:click="getEducationDetail(item.id)">
               <img class="customImage" v-bind:src="item.images[0]">
               <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
-              <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">with {{item.withWho}}</div>
+              <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.withWho}}</div>
             </div>
           </b-col>
         </b-row>

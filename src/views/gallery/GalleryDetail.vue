@@ -34,9 +34,10 @@
     <b-row style="margin: 20px;">
       <b-col style="text-align: left">
         <b-card-text style="margin-top: 20px; font-size: 16px; font-weight: bold; font-family: 'Yu Gothic'; color: rgb(116, 114, 110)">
-          {{gallery.createdWho}} 지음 | {{gallery.createdEmail}} | {{ $moment(gallery.createdDate).format('YYYY년 MM월 DD일') }} 출간<br>
-          {{gallery.width}} x {{gallery.height}}cm<br>
-          가격 {{gallery.price}}원
+          {{gallery.createdWho}} | {{gallery.createdEmail}}<br>
+          {{ gallery.createdDate}} | {{returnInformation}}
+<!--          {{gallery.width}} x {{gallery.height}}cm<br>-->
+<!--          가격 {{gallery.price}}원-->
         </b-card-text>
 
 <!--        <div style="margin-top: 30px;"></div>-->
