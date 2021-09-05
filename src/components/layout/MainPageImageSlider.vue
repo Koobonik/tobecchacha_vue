@@ -1,15 +1,17 @@
 <template>
   <div v-on:click="helloWorld">
     <div class="image">
-<!--      <img style="width: 100%; height: 250px;" src="../../assets/main_page_image.jpg" alt="사막">-->
-      <img style="width: 100%; height: 250px; object-fit: cover;" src="../../assets/main_image.jpg" alt="사막">
+      <img style="width: 100%; height: 250px;" src="../../assets/main_page_image.jpg" alt="사막">
+<!--      <img style="width: 100%; height: 250px; object-fit: cover;" src="../../assets/main_image.jpg" alt="사막">-->
       <div class="text">
-<!--          <div style="width: 100%; align-content: start; text-align: left; color: black">출판<br>전시<br>교육<br>문화기획</div>-->
-<!--            <div style="width:100%;height: 100px; text-align: start; color: black;">-->
-<!--              0도에서 100도<br>-->
-<!--              액화되고 기화되는 문화의 온도<br>-->
-<!--              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>-->
-<!--            </div>-->
+          <div style="width: 90%; text-align: left;color: black; flex: 1;">
+            출판<br>전시<br>교육<br>문화기획
+          </div>
+            <div style="width:95%;height: 100px; text-align: end; align-content: end; alignment: right; color: black; flex:2;">
+              0도에서 100도<br>
+              액화되고 기화되는 문화의 온도<br>
+              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
+            </div>
 <!--        <img   class="image2" src="../../assets/seedosee_moto.png">-->
 
       </div>
@@ -207,9 +209,13 @@
   }
 
   .image .text {
+/*display: flex;*/
+    width: 90%;
     position:absolute;
+    text-align: start;
     top:40px;
     left:40px;
+    right: 40px;
   }
     .image2 {
       margin: 0 auto;
