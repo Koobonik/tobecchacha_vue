@@ -46,7 +46,7 @@
 
         <div style="margin-top: 30px;"></div>
 <!--        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">작품소개</div>-->
-        <div v-html="returnContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
+        <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
 <!--        <div style="margin-top: 30px;"></div>-->
 <!--        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">작품설명</div>-->
 <!--        <div v-html="returnInformation" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>-->
@@ -68,8 +68,8 @@
     </b-row>
     <b-container class="bv-example-row">
       <b-row style="padding-left: 20px; padding-right: 20px; margin-top: 40px;">
-        <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px;padding-bottom: 20px;text-align: center;" lg="6" v-for="(item, i) in otherGalley" :key="i">
-          <div v-if="i < 4" v-on:click="getGalleyDetail(item.id)" >
+        <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px;text-align: center;" lg="6" v-for="(item, i) in otherGalley" :key="i">
+          <div v-if="i < 4" v-on:click="getGalleyDetail(item.id)" style="padding-bottom: 20px;">
             <img class="customImage" v-bind:src="item.images[0]">
             <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
             <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}}</div>

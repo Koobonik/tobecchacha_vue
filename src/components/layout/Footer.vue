@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="width: 100%; background-color: rgb(43,58,65)">
+    <div style="width: 100%; background-color: rgb(43,58,65); margin-top: 40px;">
       <div style="display: inline-block;">
         <div class="footer">
           <h4 style="color: white; font-weight: 700">문화온도 씨도씨</h4>
@@ -8,7 +8,7 @@
           <h6>사업자등록번호 : 814-06-01303</h6>
           <h6>통신판매업신고번호 : 2020-서울종로-2309호</h6>
           <h6>Copyright  ⓒ seedosee.com All rights Reserved</h6>
-          <div style="margin: 20px;">
+          <div style="margin: 10px;">
             <img style="height: 50px;" v-on:click="instagram" alt="Vue logo" src="../../assets/icons/insta_icon.png">
             <img style="padding-left: 5px; height: 50px;" v-on:click="facebook" alt="Vue logo" src="../../assets/icons/facebook_icon.png">
             <img style="padding-left: 5px; height: 50px;" v-on:click="kakao" alt="Vue logo" src="../../assets/icons/kakao_icon.png">
@@ -46,10 +46,11 @@ name: "Footer",
 <style scoped>
   h6{
     font-size: 15px;
+    margin: 3px;
     color: white;
   }
 .footer {
-  padding: 30px;
+  padding: 20px;
   background-color: rgb(43,58,65);
   width: 100%;
   text-align: start;

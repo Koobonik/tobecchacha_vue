@@ -30,7 +30,7 @@
           <div v-html="returnInformationContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: grey;"></div>
 
 
-          <div v-html="returnContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
+          <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
 
       </b-col>
     </b-row>
@@ -40,8 +40,8 @@
 <!--          src="../../assets/icons/icons8-tuition-90.png-->
           <b-container class="bv-example-row">
               <b-row style="padding-left: 20px; padding-right: 20px">
-                  <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px;padding-bottom: 20px;text-align: center;" lg="6" v-for="(item, i) in otherNews" :key="i">
-                      <div v-if="i < 4" v-on:click="getNewsDetail(item.id)" >
+                  <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px;text-align: center;" lg="6" v-for="(item, i) in otherNews" :key="i">
+                      <div v-if="i < 4" v-on:click="getNewsDetail(item.id)" style="padding-bottom: 20px;">
                           <img class="customImage" v-bind:src="item.images[0]">
                           <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
                       </div>
