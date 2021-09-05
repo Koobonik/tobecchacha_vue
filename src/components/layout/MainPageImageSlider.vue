@@ -86,7 +86,7 @@
 
     <div style="padding-top: 30px;"></div>
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Books</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{bookTitle}}</div>
+    <div class="title-css">{{bookTitle}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{bookSubTitle}}</div>
     <b-carousel
             id="carousel-1"
@@ -112,7 +112,7 @@
 
     <div style="padding-top: 40px;"></div>
     <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Education</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{educationTitle}}</div>
+    <div class="title-css">{{educationTitle}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{educationSubTitle}}</div>
     <b-carousel
             id="carousel-1"
@@ -138,7 +138,7 @@
 
     <div style="padding-top: 40px;"></div>
     <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Gallery</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{galleryTitle}}</div>
+    <div class="title-css">{{galleryTitle}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{gallerySubTitle}}</div>
     <b-carousel
             id="carousel-1"
@@ -164,7 +164,7 @@
 
     <div style="padding-top: 40px;"></div>
     <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
-    <div style="text-align: start; padding-left: 20px;margin-right: 20px; margin-bottom: 2px; font-weight: bold; font-size: 22px; letter-spacing: -2.0px; line-height: 30px">{{etcTitle}}</div>
+    <div class="title-css">{{etcTitle}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etcSubTitle}}</div>
     <b-carousel
             id="carousel-1"
@@ -217,6 +217,16 @@
       /*align-content: end;*/
       /*position: absolute;*/
         /*position:absolute;*/
+    }
+    .title-css {
+      text-align: start;
+      padding-left: 20px;
+      margin-right: 20px;
+      margin-bottom: -2px;
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: -2.0px;
+      line-height: 30px;
     }
 </style>
 <script>

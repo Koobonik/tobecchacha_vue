@@ -1,10 +1,10 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="light" style="background-color: rgb(43,58,65);">
+    <b-navbar toggleable="lg" type="dark"   style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(43,58,65);">
     <!-- <b-navbar toggleable="lg" type="light" style="background-color: rgb(43,58,65);height: 50px; align-content: center"> -->
       <b-navbar-brand href="/"><img style="height: 25px; align-content: center" alt="Vue logo" src="../../assets/logo_3.png"></b-navbar-brand>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-navbar-toggle target="nav-collapse" style="color: white; border-color: rgba(255,255,255,0); column-rule-color: red"> </b-navbar-toggle>
 
 <!--   가로 사이즈 줄어들면 숨어버림!   -->
       <b-collapse id="nav-collapse" is-nav style="align-content: start">
@@ -22,8 +22,8 @@
         <b-button v-if="!$route.path.includes('/etc',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`etcDetail?id=`+etcId">Etc</b-button>
         <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`etcDetail?id=`+etcId"><strong>ETC</strong></b-button>
 
-        <b-button v-if="!$route.path.includes('/news',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`newsDetail?id=`+newsId">News</b-button>
-        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65); padding-right: 2px;" v-bind:href="`newsDetail?id=`+newsId"><strong>NEWS</strong></b-button>
+        <b-button v-if="!$route.path.includes('/news',0)" style="background-color: rgb(43,58,65); color: grey; border-color: rgb(43,58,65);" v-bind:href="`newsDetail?id=`+newsId">News</b-button>
+        <b-button v-else style="background-color: rgb(43,58,65); color: white; border-color: rgb(43,58,65);" v-bind:href="`newsDetail?id=`+newsId"><strong>NEWS</strong></b-button>
 <!--        <b-button style="background-color: white; color: black; border-color: white; margin-right: 10px" href="/login">{{ $route.path }}</b-button>-->
 <!--        <b-dropdown click="goto" href="/login" id="dropdown-offset" offset="25" text="Books" class="m-2" v-bind:variant="navColor">-->
 <!--          <b-dropdown-item href="#">단체소개</b-dropdown-item>-->
