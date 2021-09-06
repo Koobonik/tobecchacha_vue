@@ -2,8 +2,8 @@
   <div>
     <div style="padding-top: 20px;"></div>
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
-    <div class="title-css">{{ect.title}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{ect.subTitle}}</div>
+    <div class="title-css">{{etc.title}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etc.subTitle}}</div>
     <b-carousel
         id="carousel-1"
 
@@ -18,7 +18,7 @@
         @sliding-end="onSlideEnd"
     >
       <b-carousel-slide
-          v-for="(image, j) in ect.images"
+          v-for="(image, j) in etc.images"
           :key="j"
           v-bind:img-src="image"
       >
@@ -28,6 +28,10 @@
       <b-col style="text-align: left">
 
           <div v-html="returnInformationContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: grey;"></div>
+
+          <div v-if="etc.videoLinks !== null">
+              <a v-for="(item, i) in etc.videoLinks" :key="i" v-bind:href="item" target="_blank">{{item}}</a>
+          </div>
 
 
           <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
@@ -44,6 +48,7 @@
                       <div v-if="i < 4" v-on:click="getEtcDetail(item.id)" style="padding-bottom: 20px;">
                           <img class="customImage" v-bind:src="item.images[0]">
                           <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
+                          <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.withWho}}</div>
                       </div>
                   </b-col>
               </b-row>
@@ -76,12 +81,14 @@ name: "BookDetail",
       sliding: null,
       currentPage: 1,
       otherBooksLength: 0,
-      ect: {
+      etc: {
         'id': 0,
         'title' : '',
         'subTitle' : '',
         'informationContent' : '',
         'content' : '',
+        'withWho' : '',
+        'videoLinks' :[],
         'images': [],
       },
       otherEtcs: [
@@ -90,6 +97,8 @@ name: "BookDetail",
           'subTitle',
           'informationContent',
           'content',
+          'withWho',
+          'videoLinks',
           'images',
       ]
     }
@@ -125,16 +134,16 @@ name: "BookDetail",
       etcApi.getEtcDetail(id).then(response => {
 
 
-        this.ect = response;
-          this.ect.content = this.ect.content.replace('\n', '<br />');
+        this.etc = response;
+          this.etc.content = this.etc.content.replace('\n', '<br />');
         console.log("여기를봐");
-        console.log(this.ect.images);
+        console.log(this.etc.images);
       }).catch(error => {
         console.log(error);
       })
     },
     openNpayLink(){
-      window.open(this.ect.npayLink, '_blank').focus();
+      window.open(this.etc.npayLink, '_blank').focus();
     }
 
   },
@@ -145,10 +154,10 @@ name: "BookDetail",
   },
   computed: {
     returnContent(){
-        return this.ect.content.replaceAll('\\n', "<br/>")
+        return this.etc.content.replaceAll('\\n', "<br/>")
       },
       returnInformationContent(){
-          return this.ect.informationContent.replaceAll('\\n', "<br/>")
+          return this.etc.informationContent.replaceAll('\\n', "<br/>")
       }
   }
 }

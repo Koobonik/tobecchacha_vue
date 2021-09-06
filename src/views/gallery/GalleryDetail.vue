@@ -31,7 +31,7 @@
       - {{gallery.imagesDescription[this.slide]}} -
     </b-card-text>
 
-    <b-row style="margin: 20px;">
+    <b-row style="margin: 10px;">
       <b-col style="text-align: left">
         <b-card-text style="margin-top: 20px; font-size: 16px; font-weight: bold; font-family: 'Yu Gothic'; color: rgb(116, 114, 110)">
           {{gallery.createdWho}} | {{gallery.createdEmail}}<br>

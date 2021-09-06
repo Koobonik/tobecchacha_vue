@@ -87,7 +87,7 @@
 <!--    </b-carousel>-->
 
     <div style="padding-top: 30px;"></div>
-    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Books</b-card-text>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Books</b-card-text>
     <div class="title-css">{{bookTitle}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{bookSubTitle}}</div>
     <b-carousel
