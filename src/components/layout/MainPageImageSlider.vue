@@ -4,14 +4,16 @@
       <img style="width: 100%; height: 250px;" src="../../assets/main_page_image.jpg" alt="사막">
 <!--      <img style="width: 100%; height: 250px; object-fit: cover;" src="../../assets/main_image.jpg" alt="사막">-->
       <div class="text">
-          <div style="width: 90%; text-align: left;color: black; flex: 1;">
-            출판<br>전시<br>교육<br>문화기획
+          <div style="text-align: left;color: black;">
+            <strong>출판<br>전시<br>교육<br>문화기획</strong>
           </div>
-            <div style="width:95%;height: 100px; text-align: end; align-content: end; alignment: right; color: black; flex:2;">
-              0도에서 100도<br>
-              액화되고 기화되는 문화의 온도<br>
-              <div style="font-weight: normal;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
-            </div>
+        <div style="align-content: end; alignment: right; width: 100%; flex: 2;text-align: right">
+          <div style="height: 100px; text-align: start; align-content: end; alignment: right; display: inline-block">
+            0도에서 100도<br>
+            액화되고 기화되는 문화의 온도<br>
+            <div style="font-weight: bold;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
+          </div>
+        </div>
 <!--        <img   class="image2" src="../../assets/seedosee_moto.png">-->
 
       </div>
@@ -210,12 +212,12 @@
 
   .image .text {
 /*display: flex;*/
-    width: 90%;
+    width: 95%;
     position:absolute;
     text-align: start;
     top:40px;
-    left:40px;
-    right: 40px;
+    left:20px;
+    right: 25px;
   }
     .image2 {
       margin: 0 auto;

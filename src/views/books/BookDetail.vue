@@ -64,7 +64,7 @@
           <div v-html="returnContent" style=" text-align:justify;font-size: 18px;margin-top: 30px; margin-bottom: 30px; font-family: 'Yu Gothic'; color: black;"></div>
 
           <div style=" text-align: right">
-              <img style="padding-left: 20px; height: 30px; margin-bottom: 40px" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_button.png">
+              <img style="padding-left: 20px; height: 40px; margin-bottom: 40px" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/naver_pay_icon.png">
           </div>
       </b-col>
     </b-row>

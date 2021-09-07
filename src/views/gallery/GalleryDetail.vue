@@ -62,7 +62,7 @@
 <!--        <div style="font-size: 14px; font-family: 'Yu Gothic'; color: rgb(116, 114, 110);">{{gallery.content}}</div>-->
 
         <div v-if="gallery.npayLink != null" style=" text-align: right">
-          <img style="padding-left: 20px; height: 30px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/npay_button.png">
+          <img style="padding-left: 20px; height: 40px;" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/naver_pay_icon.png">
         </div>
       </b-col>
     </b-row>
