@@ -4,11 +4,11 @@
       <img style="width: 100%; height: 250px;" src="../../assets/main_page_image.jpg" alt="사막">
 <!--      <img style="width: 100%; height: 250px; object-fit: cover;" src="../../assets/main_image.jpg" alt="사막">-->
       <div class="text">
-          <div style="text-align: left;color: black;">
+          <div style="text-align: left;color: black; width: 100%;letter-spacing: -2px; padding-left: 20px">
             <strong>출판<br>전시<br>교육<br>문화기획</strong>
           </div>
-        <div style="align-content: end; alignment: right; width: 100%; flex: 2;text-align: right">
-          <div style="height: 100px; text-align: start; align-content: end; alignment: right; display: inline-block">
+        <div style="align-content: end; alignment: right; flex: 2;text-align: right; padding-right: 20px">
+          <div style="text-align: start; align-content: end; alignment: right; display: inline-block; letter-spacing: -2px; line-height:25px;">
             0도에서 100도<br>
             액화되고 기화되는 문화의 온도<br>
             <div style="font-weight: bold;font-size: 24px">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
@@ -167,7 +167,7 @@
     </b-carousel>
 
     <div style="padding-top: 40px;"></div>
-    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
+    <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Etc</b-card-text>
     <div class="title-css">{{etcTitle}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etcSubTitle}}</div>
     <b-carousel
@@ -212,12 +212,12 @@
 
   .image .text {
 /*display: flex;*/
-    width: 95%;
+    width: 100%;
     position:absolute;
     text-align: start;
     top:40px;
-    left:20px;
-    right: 25px;
+    /*left:25px;*/
+    /*right: 25px;*/
   }
     .image2 {
       margin: 0 auto;

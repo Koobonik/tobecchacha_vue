@@ -4,7 +4,7 @@
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
     <div class="title-css">{{etc.title}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etc.subTitle}}</div>
-      <video v-if="etc.images[0].endsWith('mp4')" autoplay v-bind:src="etc.images[0]" controls loop></video>
+      <video v-if="etc.images[0].endsWith('mp4')" autoplay v-bind:src="etc.images[0]" loop muted></video>
     <b-carousel
             v-else
         id="carousel-1"
@@ -48,7 +48,8 @@
               <b-row style="padding-left: 20px; padding-right: 20px">
                   <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px;text-align: center;" lg="6" v-for="(item, i) in otherEtcs" :key="i">
                       <div v-if="i < 4" v-on:click="getEtcDetail(item.id)" style="padding-bottom: 20px;">
-                          <img class="customImage" v-bind:src="item.images[0]">
+                          <video style="width: 100%; object-fit: none;" v-if="item.images[0].endsWith('mp4')" autoplay v-bind:src="item.images[0]" loop muted></video>
+                          <img v-else class="customImage" v-bind:src="item.images[0]">
                           <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
                           <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.withWho}}</div>
                       </div>
