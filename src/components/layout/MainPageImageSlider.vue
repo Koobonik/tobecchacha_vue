@@ -433,7 +433,7 @@ export default {
     await this.getEducation(0,3);
     await this.getGallery(0,3);
     await this.getMainNotice(0, 10);
-    await this.getEtcs(0,10);
+    await this.getEtcs(0,3);
   },
 }
 </script>
