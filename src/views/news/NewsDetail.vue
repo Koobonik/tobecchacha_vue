@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="padding-top: 20px;"></div>
-    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> NEWS</b-card-text>
+    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> News</b-card-text>
     <div class="title-css">{{ news.title }}</div>
     <div style="text-align: start; padding-left: 20px; margin-right: 20px;margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{ news.subTitle }}</div>
     <b-carousel

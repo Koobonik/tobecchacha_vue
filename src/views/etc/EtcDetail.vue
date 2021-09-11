@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="padding-top: 20px;"></div>
-    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> ETC</b-card-text>
+    <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Etc</b-card-text>
     <div class="title-css">{{etc.title}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etc.subTitle}}</div>
       <video v-if="etc.images[0].endsWith('mp4')" autoplay v-bind:src="etc.images[0]" loop muted></video>
