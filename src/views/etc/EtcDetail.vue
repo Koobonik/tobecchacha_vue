@@ -4,7 +4,7 @@
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Etc</b-card-text>
     <div class="title-css">{{etc.title}}</div>
     <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etc.subTitle}}</div>
-      <video v-if="etc.mp4File != null && etc.mp4File.endsWith('mp4')" autoplay v-bind:src="etc.mp4File" loop muted></video>
+      <video style="width: 100%; padding-left: 10px; padding-right: 10px;" v-if="etc.mp4File != null && etc.mp4File.endsWith('mp4')" autoplay v-bind:src="etc.mp4File" loop muted></video>
     <b-carousel
             v-else
         id="carousel-1"
