@@ -9,11 +9,11 @@
           </div>
         <div style="align-content: end; alignment: right; flex: 2;text-align: right; padding-right: 20px">
           <div style="text-align: start; align-content: end; alignment: right; display: inline-block;">
-            <div style="line-height: 20px; letter-spacing: -3px;">
+            <div style="line-height: 20px; letter-spacing: -2px; font-size: 15px;">
               0도에서 100도<br>
               액화되고 기화되는 문화의 온도<br>
             </div>
-            <div style="font-weight: bold;font-size: 24px; letter-spacing: 0px;">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
+            <div style="font-weight: bold;font-size: 25px; letter-spacing: 0px;">문화온도 <strong style="font-weight: bolder;font-size: 24px">씨도씨</strong></div>
           </div>
         </div>
 <!--        <img   class="image2" src="../../assets/seedosee_moto.png">-->
