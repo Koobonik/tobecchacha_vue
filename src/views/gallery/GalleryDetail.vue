@@ -3,7 +3,7 @@
     <div style="padding-top: 20px;"></div>
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Gallery</b-card-text>
     <div class="title-css">{{gallery.title}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{gallery.subTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{gallery.subTitle}}</div>
     <b-carousel
         id="carousel-1"
 
@@ -46,7 +46,7 @@
 
         <div style="margin-top: 30px;"></div>
 <!--        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">작품소개</div>-->
-        <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
+        <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black; letter-spacing: -1.0px;"></div>
 <!--        <div style="margin-top: 30px;"></div>-->
 <!--        <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">작품설명</div>-->
 <!--        <div v-html="returnInformation" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>-->
@@ -71,8 +71,8 @@
         <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px;text-align: center;" lg="6" v-for="(item, i) in otherGalley" :key="i">
           <div v-if="i < 4" v-on:click="getGalleyDetail(item.id)" style="padding-bottom: 20px;">
             <img class="customImage" v-bind:src="item.images[0]">
-            <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
-            <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}}</div>
+            <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left; letter-spacing: -1.0px;">{{item.title}}</div>
+            <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110); letter-spacing: -1.0px;">{{item.createdWho}}</div>
           </div>
         </b-col>
       </b-row>

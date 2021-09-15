@@ -93,7 +93,7 @@
     <div style="padding-top: 30px;"></div>
     <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Books</b-card-text>
     <div class="title-css">{{bookTitle}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{bookSubTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{bookSubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -119,7 +119,7 @@
     <div style="padding-top: 40px;"></div>
     <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Education</b-card-text>
     <div class="title-css">{{educationTitle}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{educationSubTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{educationSubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -145,7 +145,7 @@
     <div style="padding-top: 40px;"></div>
     <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Gallery</b-card-text>
     <div class="title-css">{{galleryTitle}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{gallerySubTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{gallerySubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false
@@ -171,7 +171,7 @@
     <div style="padding-top: 40px;"></div>
     <b-card-text style="margin-bottom: 0px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Etc</b-card-text>
     <div class="title-css">{{etcTitle}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etcSubTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{etcSubTitle}}</div>
     <b-carousel
             id="carousel-1"
             :interval=false

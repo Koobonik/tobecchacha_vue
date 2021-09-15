@@ -3,7 +3,7 @@
     <div style="padding-top: 20px;"></div>
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> News</b-card-text>
     <div class="title-css">{{ news.title }}</div>
-    <div style="text-align: start; padding-left: 20px; margin-right: 20px;margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{ news.subTitle }}</div>
+    <div style="text-align: start; padding-left: 20px; margin-right: 20px;margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{ news.subTitle }}</div>
     <b-carousel
         id="carousel-1"
 
@@ -30,7 +30,7 @@
           <div v-html="returnInformationContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: grey;"></div>
 
 
-          <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
+          <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black; letter-spacing: -1.0px;"></div>
 
       </b-col>
     </b-row>
@@ -43,7 +43,7 @@
                   <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px;text-align: center;" lg="6" v-for="(item, i) in otherNews" :key="i">
                       <div v-if="i < 4" v-on:click="getNewsDetail(item.id)" style="padding-bottom: 20px;">
                           <img class="customImage" v-bind:src="item.images[0]">
-                          <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
+                          <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left; letter-spacing: -1.0px;">{{item.title}}</div>
                       </div>
                   </b-col>
               </b-row>

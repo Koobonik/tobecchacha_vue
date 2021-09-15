@@ -3,7 +3,7 @@
     <div style="padding-top: 20px;"></div>
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Books</b-card-text>
     <div class="title-css">{{books.title}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{books.subTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{books.subTitle}}</div>
     <b-carousel
         id="carousel-1"
 
@@ -61,7 +61,7 @@
 
 <!--          <div style="font-size: 18px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">책소개</div>-->
 
-          <div v-html="returnContent" style=" text-align:justify;font-size: 18px;margin-top: 30px; margin-bottom: 30px; font-family: 'Yu Gothic'; color: black;"></div>
+          <div v-html="returnContent" style=" text-align:justify;font-size: 18px;margin-top: 30px; margin-bottom: 30px; font-family: 'Yu Gothic'; color: black; letter-spacing: -1.0px;"></div>
 
           <div v-if="this.books.npayLink != null" style=" text-align: right">
               <img style="padding-left: 20px; height: 40px; margin-bottom: 40px" v-on:click="openNpayLink" alt="Vue logo" src="../../assets/naver_pay_icon.png">
@@ -76,8 +76,8 @@
                   <b-col style="height: 40%; width: 50%; padding-right: 5px; padding-left: 5px; text-align: center;" lg="6" v-for="(item, i) in otherBooks" :key="i">
                       <div v-if="i < 4" v-on:click="getBookDetail(item.id)"  style="padding-bottom: 20px;">
                           <img class="customImage" v-bind:src="item.images[0]">
-                          <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
-                          <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.createdWho}} 지음</div>
+                          <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left; letter-spacing: -1.0px;">{{item.title}}</div>
+                          <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110); letter-spacing: -1.0px;">{{item.createdWho}} 지음</div>
                       </div>
                   </b-col>
               </b-row>

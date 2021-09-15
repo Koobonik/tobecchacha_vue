@@ -3,7 +3,7 @@
     <div style="padding-top: 20px;"></div>
     <b-card-text style="margin-bottom: 5px; text-align: start; margin-left: 20px;font-size: 24px; font-weight: bold; color: darkgrey"> Etc</b-card-text>
     <div class="title-css">{{etc.title}}</div>
-    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -2.0px; color: grey">{{etc.subTitle}}</div>
+    <div style="text-align: start; padding-left: 20px; margin-bottom: 10px;font-size: 16px; letter-spacing: -1.0px; color: grey">{{etc.subTitle}}</div>
       <video style="width: 100%; padding-left: 10px; padding-right: 10px;" v-if="etc.mp4File != null && (etc.mp4File.endsWith('mp4') || etc.mp4File.endsWith('mov') || etc.mp4File.endsWith('wmv') || etc.mp4File.endsWith('avi') || etc.mp4File.endsWith('mpeg') || etc.mp4File.endsWith('f4v'))" autoplay v-bind:src="etc.mp4File" loop controls muted></video>
     <b-carousel
             v-else
@@ -36,7 +36,7 @@
           </div>
 
 
-          <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black;"></div>
+          <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black; letter-spacing: -1.0px;"></div>
 
       </b-col>
     </b-row>
@@ -50,8 +50,8 @@
                       <div v-if="i < 4" v-on:click="getEtcDetail(item.id)" style="padding-bottom: 20px;">
                           <video style="width: 100%; object-fit: none;" v-if="item.images[0].endsWith('mp4')" autoplay v-bind:src="item.images[0]" loop muted></video>
                           <img v-else class="customImage" v-bind:src="item.images[0]">
-                          <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left;">{{item.title}}</div>
-                          <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110);">{{item.withWho}}</div>
+                          <div style="font-size: 18px; font-weight: bold; margin-top: 10px; text-align: left; letter-spacing: -1.0px;">{{item.title}}</div>
+                          <div style="font-size: 14px; font-weight: bold;text-align: left; color: rgb(116, 114, 110); letter-spacing: -1.0px;">{{item.withWho}}</div>
                       </div>
                   </b-col>
               </b-row>

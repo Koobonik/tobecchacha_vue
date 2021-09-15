@@ -46,7 +46,7 @@ name: "Footer",
 <style scoped>
   h6{
     font-size: 15px;
-    margin: 3px;
+    margin-bottom: 3px;
     color: white;
   }
 .footer {
