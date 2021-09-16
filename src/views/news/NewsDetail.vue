@@ -27,7 +27,7 @@
     <b-row style="margin-left: 10px; margin-right: 10px;">
       <b-col style="text-align: left">
 
-          <div v-html="returnInformationContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: grey;"></div>
+          <div v-html="returnInformationContent" style="font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: grey; letter-spacing: -1.0px;"></div>
 
 
           <div v-html="returnContent" style="text-align:justify; font-size: 18px;margin-top: 30px; font-family: 'Yu Gothic'; color: black; letter-spacing: -1.0px;"></div>
