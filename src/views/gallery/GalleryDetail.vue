@@ -189,6 +189,7 @@ name: "GalleryDetail",
         this.gallery = response;
         console.log("여기를봐");
         console.log(this.gallery.images);
+        window.scrollTo(0, 0);
       }).catch(error => {
         console.log(error);
       })

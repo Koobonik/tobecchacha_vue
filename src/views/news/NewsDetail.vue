@@ -129,6 +129,7 @@ name: "NewsDetail",
           this.news.content = this.news.content.replace('\n', '<br />');
         console.log("여기를봐");
         console.log(this.news.images);
+        window.scrollTo(0, 0);
       }).catch(error => {
         console.log(error);
       })

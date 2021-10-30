@@ -189,6 +189,7 @@ name: "BookDetail",
           this.books.content = this.books.content.replace('\n', '<br />');
         console.log("여기를봐");
         console.log(this.books.images);
+        window.scrollTo(0, 0);
       }).catch(error => {
         console.log(error);
       })

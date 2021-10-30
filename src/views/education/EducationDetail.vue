@@ -139,6 +139,7 @@ name: "EducationDetail",
         this.education = response;
         console.log("여기를봐");
         console.log(this.education.images);
+        window.scrollTo(0, 0);
       }).catch(error => {
         console.log(error);
       })
