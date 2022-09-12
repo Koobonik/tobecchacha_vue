@@ -4,9 +4,9 @@
       <div style="display: inline-block;">
         <div class="footer">
           <h4 style="color: white; font-weight: 700">문화온도 씨도씨</h4>
-          <h6>서울시 노원구 상계로 111</h6>
+          <h6>서울시 도봉구 노해로 341, 732호</h6>
           <h6>사업자등록번호 : 814-06-01303</h6>
-          <h6>통신판매업신고번호 : 제2021-서울노원-1852호</h6>
+          <h6>통신판매업신고번호 : 제 2022-서울도봉-0944호</h6>
           <h6>Copyright  ⓒ seedosee.com All rights Reserved</h6>
           <div style="margin: 10px;">
             <img style="height: 50px;" v-on:click="instagram" alt="Vue logo" src="../../assets/icons/insta_icon.png">
